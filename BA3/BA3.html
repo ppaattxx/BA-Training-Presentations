@@ -116,35 +116,6 @@
             background: #94a3b8;
         }
         
-        .keyboard-hint {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: white;
-            padding: 16px;
-            border-radius: 8px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-            font-size: 0.75rem;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            z-index: 1000;
-        }
-        
-        .keyboard-hint.show {
-            opacity: 1;
-        }
-        
-        .keyboard-hint kbd {
-            background: #f1f5f9;
-            border: 1px solid #cbd5e1;
-            border-radius: 4px;
-            padding: 2px 6px;
-            font-family: monospace;
-            font-size: 0.7rem;
-            color: #475569;
-        }
-        
         @media print {
             .no-print {
                 display: none !important;
@@ -179,9 +150,6 @@
                     <a href="../index.html" class="text-white hover:text-white/80 transition-colors hidden sm:block" title="Back to Home">
                         <i class="fas fa-home text-lg"></i>
                     </a>
-                    <button id="helpBtn" class="text-white hover:text-white/80 transition-colors" title="Keyboard Shortcuts">
-                        <i class="fas fa-circle-info text-lg"></i>
-                    </button>
                 </div>
             </div>
         </div>
@@ -247,19 +215,6 @@
         </div>
     </main>
 
-    <!-- Keyboard Shortcuts Helper -->
-    <div class="keyboard-hint" id="keyboardHint">
-        <div class="text-gray-800 font-semibold mb-2 text-sm">
-            <i class="fas fa-keyboard mr-1"></i> Keyboard Shortcuts
-        </div>
-        <div class="space-y-1 text-gray-600 text-xs">
-            <div><kbd>→</kbd> <kbd>Space</kbd> Next slide</div>
-            <div><kbd>←</kbd> <kbd>Backspace</kbd> Previous slide</div>
-            <div><kbd>Home</kbd> First slide | <kbd>End</kbd> Last slide</div>
-            <div><kbd>?</kbd> Toggle this help</div>
-        </div>
-    </div>
-
     <!-- Data Script (loads slide content) -->
     <script src="ba3-data-full.js"></script>
     
@@ -277,17 +232,6 @@
                 window.nextSlide = () => window.presentation.nextSlide();
                 window.previousSlide = () => window.presentation.previousSlide();
                 window.goToSlide = (index) => window.presentation.goToSlide(index);
-                
-                // Help button handler
-                const helpBtn = document.getElementById('helpBtn');
-                const keyboardHint = document.getElementById('keyboardHint');
-                
-                helpBtn.addEventListener('click', () => {
-                    keyboardHint.classList.toggle('show');
-                    setTimeout(() => {
-                        keyboardHint.classList.remove('show');
-                    }, 5000);
-                });
             } else {
                 console.error('PresentationApp or slides data not loaded!');
             }

@@ -1,51 +1,102 @@
-# Operating System Files
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-ehthumbs.db
-Thumbs.db
-desktop.ini
+# Operating System Files# Operating System Files
 
-# Editor Files
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.project
-.settings/
+.DS_Store.DS_Store
 
-# Logs and Temporary Files
-*.log
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-*.tmp
-*.temp
+.DS_Store?.DS_Store?
 
-# Node modules (if you ever add npm packages)
-node_modules/
-package-lock.json
+._*._*
 
-# Python cache (if you use Python server)
-__pycache__/
-*.py[cod]
-*$py.class
+.Spotlight-V100.Spotlight-V100
 
-# Backup files
-*.backup
-*.bak
-*~
+.Trashes.Trashes
 
-# Test and diagnostic files (in case they're recreated)
-DIAGNOSTIC.html
-TOOLBAR_TEST.html
-INSPECTOR.html
-FIX_CACHE.html
-FORCE_TOOLBAR.js
-TEST_FEATURES.html
-enhanced-app.js
-simple-app.js
-ba2-extracted.js
+ehthumbs.dbehthumbs.db
+
+Thumbs.dbThumbs.db
+
+desktop.inidesktop.ini
+
+
+
+# Editor Files# Editor Files
+
+.vscode/.vscode/
+
+.idea/.idea/
+
+*.swp*.swp
+
+*.swo*.swo
+
+*~*~
+
+.project.project
+
+.settings/.settings/
+
+
+
+# Logs and Temporary Files# Logs and Temporary Files
+
+*.log*.log
+
+npm-debug.log*npm-debug.log*
+
+yarn-debug.log*yarn-debug.log*
+
+yarn-error.log*yarn-error.log*
+
+*.tmp*.tmp
+
+*.temp*.temp
+
+
+
+# Node modules (if you ever add npm packages)# Node modules (if you ever add npm packages)
+
+node_modules/node_modules/
+
+package-lock.jsonpackage-lock.json
+
+
+
+# Python cache (if you use Python server)# Python cache (if you use Python server)
+
+__pycache__/__pycache__/
+
+*.py[cod]*.py[cod]
+
+*$py.class*$py.class
+
+
+
+# Backup files# Backup files
+
+*.backup*.backup
+
+*.bak*.bak
+
+*~*~
+
+
+
+# Test and diagnostic files (in case they're recreated)# Test and diagnostic files (in case they're recreated)
+
+DIAGNOSTIC.htmlDIAGNOSTIC.html
+
+TOOLBAR_TEST.htmlTOOLBAR_TEST.html
+
+INSPECTOR.htmlINSPECTOR.html
+
+FIX_CACHE.htmlFIX_CACHE.html
+
+FORCE_TOOLBAR.jsFORCE_TOOLBAR.js
+
+TEST_FEATURES.htmlTEST_FEATURES.html
+
+enhanced-app.jsenhanced-app.js
+
+simple-app.jssimple-app.js
+
+ba2-extracted.jsba2-extracted.js
+
