@@ -6,7 +6,7 @@
 
 
 
-![Version](https://img.shields.io/badge/version-1.0-blue.svg)![Version](https://img.shields.io/badge/version-2.0-blue.svg)
+![Version](https://img.shields.io/badge/version-2.0-blue.svg)![Version](https://img.shields.io/badge/version-2.0-blue.svg)
 
 ![License](https://img.shields.io/badge/license-Proprietary-red.svg)![License](https://img.shields.io/badge/license-Proprietary-red.svg)
 
@@ -18,467 +18,924 @@
 
 
 
-</div>[View Demo](index.html) • [Keyboard Shortcuts](KEYBOARD_SHORTCUTS.md) • [Features](#-features)
+[View Demo](https://ppaattxx.github.io/BA-Training-Presentations/) • [Quick Start](#-quick-start) • [Features](#-features)[View Demo](https://ppaattxx.github.io/BA-Training-Presentations/) • [Quick Start](#-quick-start) • [Features](#-features)
 
 
 
----</div>
+</div></div>
 
 
 
-## 🎯 Overview---
+---
 
 
 
-A lightweight, framework-free slide presentation system designed for Business Analysis training. Features three comprehensive courses covering project initiation, BA fundamentals, and project management techniques. Built with modern web technologies, requiring **zero build process** or dependencies.## 📚 Table of Contents
+## 📚 Table of Contents## 🎯 Overview---
 
 
 
-### Why This Project?- [Overview](#-overview)
+- [Overview](#-overview)
 
 - [Course Structure](#-course-structure)
 
-- ✅ **Zero Dependencies**: No npm, webpack, or build tools required- [Features](#-features)
+- [Features](#-features)A lightweight, framework-free slide presentation system designed for Business Analysis training. Features three comprehensive courses covering project initiation, BA fundamentals, and project management techniques. Built with modern web technologies, requiring **zero build process** or dependencies.## 📚 Table of Contents
 
-- ✅ **Lightweight**: Simple codebase (~200 lines per deck)- [Quick Start](#-quick-start)
+- [Quick Start](#-quick-start)
 
-- ✅ **Enterprise-Ready**: Professional styling suitable for corporate training- [Navigation](#-navigation)
+- [Navigation](#-navigation)
 
-- ✅ **Accessible**: WCAG compliant with full keyboard navigation- [Technology Stack](#-technology-stack)
+- [Technology Stack](#-technology-stack)
 
-- ✅ **Responsive**: Works seamlessly on desktop, tablet, and mobile- [File Structure](#-file-structure)
+- [File Structure](#-file-structure)### Why This Project?- [Overview](#-overview)
 
-- ✅ **Portable**: Single HTML files that run anywhere- [Development](#-development)
+- [Development](#-development)
 
-- [Accessibility](#-accessibility)
+- [Accessibility](#-accessibility)- [Course Structure](#-course-structure)
 
----- [License](#-license)
+- [Troubleshooting](#-troubleshooting)
 
-
-
-## 📖 Course Structure## 🎯 Overview
+- [License](#-license)- ✅ **Zero Dependencies**: No npm, webpack, or build tools required- [Features](#-features)
 
 
 
-### BA1: Project Initiation (Foundation)A lightweight, framework-free slide presentation system designed for Business Analysis training. Features three comprehensive courses covering project initiation, BA fundamentals, and project management techniques. Built with modern web technologies, requiring zero build process or dependencies.
+---- ✅ **Lightweight**: Simple codebase (~200 lines per deck)- [Quick Start](#-quick-start)
 
-**8 slides • 30-45 minutes**
 
-### Why This Project?
 
-Essential concepts for starting BA projects:
+## 🎯 Overview- ✅ **Enterprise-Ready**: Professional styling suitable for corporate training- [Navigation](#-navigation)
 
-- PM vs BA role distinction- ✅ **Zero Dependencies**: No npm, webpack, or build tools required
 
-- Requirements management planning- ✅ **Enterprise-Ready**: Professional styling suitable for corporate training
 
-- Stakeholder analysis & engagement- ✅ **Accessible**: WCAG 2.1 compliant with full keyboard navigation
+A lightweight, framework-free slide presentation system designed for Business Analysis training. Features three comprehensive courses covering project initiation, BA fundamentals, and project management techniques. Built with modern web technologies, requiring **zero build process** or dependencies.- ✅ **Accessible**: WCAG compliant with full keyboard navigation- [Technology Stack](#-technology-stack)
 
-- Performance measures & KPIs- ✅ **Responsive**: Works seamlessly on desktop, tablet, and mobile
+
+
+### Why This Project?- ✅ **Responsive**: Works seamlessly on desktop, tablet, and mobile- [File Structure](#-file-structure)
+
+
+
+- ✅ **Zero Dependencies**: No npm, webpack, or build tools required- ✅ **Portable**: Single HTML files that run anywhere- [Development](#-development)
+
+- ✅ **Lightweight**: Simple codebase (~200 lines per deck)
+
+- ✅ **Enterprise-Ready**: Professional styling suitable for corporate training- [Accessibility](#-accessibility)
+
+- ✅ **Accessible**: WCAG 2.1 compliant with full keyboard navigation
+
+- ✅ **Responsive**: Works seamlessly on desktop, tablet, and mobile---- [License](#-license)
 
 - ✅ **Portable**: Single HTML files that run anywhere
 
-**Path**: `BA1/BA1.html`
+
+
+---
+
+## 📖 Course Structure## 🎯 Overview
 
 ## 📖 Course Structure
 
-### BA2: Business Analysis Fundamentals (Comprehensive)
 
-**16 slides • 90-120 minutes**### BA1: Project Initiation (Foundation)
 
-**8 slides • 30-45 minutes**
+### BA1: Project Initiation (Foundation)
+
+**8 slides • 30-45 minutes**### BA1: Project Initiation (Foundation)A lightweight, framework-free slide presentation system designed for Business Analysis training. Features three comprehensive courses covering project initiation, BA fundamentals, and project management techniques. Built with modern web technologies, requiring zero build process or dependencies.
+
+
+
+Essential concepts for starting BA projects:**8 slides • 30-45 minutes**
+
+- PM vs BA role distinction
+
+- Requirements management planning### Why This Project?
+
+- Stakeholder analysis & engagement
+
+- Performance measures & KPIsEssential concepts for starting BA projects:
+
+
+
+**Path**: `BA1/BA1.html`- PM vs BA role distinction- ✅ **Zero Dependencies**: No npm, webpack, or build tools required
+
+
+
+### BA2: Business Analysis Fundamentals (Comprehensive)- Requirements management planning- ✅ **Enterprise-Ready**: Professional styling suitable for corporate training
+
+**16 slides • 90-120 minutes**
+
+- Stakeholder analysis & engagement- ✅ **Accessible**: WCAG 2.1 compliant with full keyboard navigation
 
 Complete guide to BA practices:
 
-- SMART requirements & methodologiesEssential concepts for starting BA projects:
+- SMART requirements & methodologies- Performance measures & KPIs- ✅ **Responsive**: Works seamlessly on desktop, tablet, and mobile
 
-- Agile & Predictive frameworks (Scrum, Kanban, Waterfall, V-Model)- PM vs BA role distinction
+- Agile & Predictive frameworks (Scrum, Kanban, Waterfall, V-Model)
 
-- Elicitation techniques (Interviews, Workshops, Surveys)- Requirements management planning
+- Elicitation techniques (Interviews, Workshops, Surveys)- ✅ **Portable**: Single HTML files that run anywhere
 
-- Visual modeling (BPMN, UML, ERD, State Diagrams)- Stakeholder analysis & engagement
+- Visual modeling (BPMN, UML, ERD, State Diagrams)
 
-- BRD structure & approval process- Performance measures & KPIs
+- BRD structure & approval process**Path**: `BA1/BA1.html`
 
 
 
-**Path**: `BA2/BA2.html`**Path**: `BA1/BA1.html`
+**Path**: `BA2/BA2.html`## 📖 Course Structure
 
 
 
 ### BA3: Project Management (Advanced)### BA2: Business Analysis Fundamentals (Comprehensive)
 
-**20+ slides • 90-120 minutes****16 slides • 90-120 minutes**
-
-
-
-PM techniques & tools for BA projects:Complete guide to BA practices:
-
-- Project lifecycle stages (Conception, Definition, Execution, Close)- SMART requirements & methodologies
-
-- Business case & charter development- Agile & Predictive frameworks (Scrum, Kanban, Waterfall, V-Model)
-
-- Work breakdown structure (WBS)- Elicitation techniques (Interviews, Workshops, Surveys)
-
-- Risk management & change control- Visual modeling (BPMN, UML, ERD, State Diagrams)
-
-- Project closure & lessons learned- BRD structure & approval process
-
-
-
-**Path**: `BA3/BA3.html`**Path**: `BA2/BA2.html`
-
-
-
----### BA3: Project Management (Advanced)
-
 **20 slides • 90-120 minutes**
 
-## 🚀 Quick Start
+**16 slides • 90-120 minutes**### BA1: Project Initiation (Foundation)
 
 PM techniques & tools for BA projects:
 
-### Method 1: Direct File Access (Simplest)- Business case & charter development
+- Project lifecycle stages (Conception, Definition, Execution, Close)**8 slides • 30-45 minutes**
 
-```bash- CARD analysis & stakeholder management
+- Business case & charter development
 
-# Double-click any HTML file in Windows Explorer- Project planning & communication
+- CARD analysis & stakeholder managementComplete guide to BA practices:
 
-# Or right-click and select "Open with" → Your Browser- Execution, control & project closure
+- Work breakdown structure (WBS)
 
+- Risk management & change control- SMART requirements & methodologiesEssential concepts for starting BA projects:
 
+- Project closure & lessons learned
 
-index.html      # Homepage with course catalog**Path**: `BA3/BA3.html`
+- Agile & Predictive frameworks (Scrum, Kanban, Waterfall, V-Model)- PM vs BA role distinction
 
-BA1/BA1.html    # Project Initiation course
+**Path**: `BA3/BA3.html`
 
-BA2/BA2.html    # Fundamentals course## ✨ Features
+- Elicitation techniques (Interviews, Workshops, Surveys)- Requirements management planning
 
-BA3/BA3.html    # Project Management course
+---
 
-```### 🎨 User Experience
+- Visual modeling (BPMN, UML, ERD, State Diagrams)- Stakeholder analysis & engagement
+
+## ✨ Features
+
+- BRD structure & approval process- Performance measures & KPIs
+
+### 🎨 User Experience
 
 - **Smooth Animations**: CSS-based transitions with reduced motion support
 
-### Method 2: Local Web Server (Recommended)- **Glass Morphism**: Modern glassmorphic design elements
+- **Glass Morphism**: Modern glassmorphic design elements
 
-```bash- **Hover Effects**: Interactive card lifts and visual feedback
+- **Hover Effects**: Interactive card lifts and visual feedback**Path**: `BA2/BA2.html`**Path**: `BA1/BA1.html`
 
-# Python 3- **Progress Tracking**: Visual progress bar with percentage completion
+- **Progress Tracking**: Visual progress bar with percentage completion
 
-python -m http.server 8000- **Responsive Layout**: Mobile-first design with breakpoint optimization
+- **Responsive Layout**: Mobile-first design with breakpoint optimization
 
 - **Professional Icons**: Font Awesome 6.4.0 integration
 
-# Then open: http://localhost:8000- **Custom Typography**: Google Fonts (Inter family)
+- **Custom Typography**: Google Fonts (Inter family)### BA3: Project Management (Advanced)### BA2: Business Analysis Fundamentals (Comprehensive)
 
-```
 
-### ⌨️ Navigation
 
-### Method 3: GitHub Pages (After Upload)- **Keyboard Shortcuts**: Full keyboard control (see [KEYBOARD_SHORTCUTS.md](KEYBOARD_SHORTCUTS.md))
+### ⌨️ Navigation**20+ slides • 90-120 minutes****16 slides • 90-120 minutes**
 
-```- **Touch Gestures**: Swipe left/right on mobile devices (50px threshold)
+- **Keyboard Shortcuts**: Full keyboard control
 
-https://YOUR-USERNAME.github.io/BA-Training-Presentations/- **Mouse Controls**: Click-based navigation buttons
+- **Touch Gestures**: Swipe left/right on mobile devices (50px threshold)
 
-```- **Direct Jump**: Home/End keys for quick access
+- **Mouse Controls**: Click-based navigation buttons
+
+- **Direct Jump**: Home/End keys for quick accessPM techniques & tools for BA projects:Complete guide to BA practices:
 
 - **Help System**: Press `?` to toggle shortcuts guide
 
----
+- Project lifecycle stages (Conception, Definition, Execution, Close)- SMART requirements & methodologies
 
 ### 🎯 Accessibility
 
-## 🎮 Navigation- **Screen Reader Support**: Proper ARIA labels and semantic HTML
+- **Screen Reader Support**: Proper ARIA labels and semantic HTML- Business case & charter development- Agile & Predictive frameworks (Scrum, Kanban, Waterfall, V-Model)
 
 - **Keyboard-Only Navigation**: Complete access without mouse
 
-### Keyboard Shortcuts- **High Contrast**: WCAG 2.1 Level AA compliant color ratios
+- **High Contrast**: WCAG 2.1 Level AA compliant color ratios- Work breakdown structure (WBS)- Elicitation techniques (Interviews, Workshops, Surveys)
 
 - **Focus Indicators**: Clear visual focus states throughout
 
-| Shortcut | Action |- **Reduced Motion**: Respects user's motion preferences
+- **Reduced Motion**: Respects user's motion preferences- Risk management & change control- Visual modeling (BPMN, UML, ERD, State Diagrams)
 
-|----------|--------|
 
-| `→` `Space` | Next slide |### 💻 Developer Experience
 
-| `←` `Backspace` | Previous slide |- **No Build Process**: Edit files, refresh browser—that's it
+### 💻 Developer Experience- Project closure & lessons learned- BRD structure & approval process
 
-| `Home` | First slide |- **Zero Dependencies**: No npm packages or bundlers required
+- **No Build Process**: Edit files, refresh browser—that's it
 
-| `End` | Last slide |- **CDN Resources**: Tailwind CSS and Font Awesome via CDN
+- **Zero Dependencies**: No npm packages or bundlers required
 
-| `?` | Toggle help |- **ES6+ JavaScript**: Modern vanilla JavaScript, no frameworks
+- **CDN Resources**: Tailwind CSS and Font Awesome via CDN
+
+- **ES6+ JavaScript**: Modern vanilla JavaScript, no frameworks**Path**: `BA3/BA3.html`**Path**: `BA2/BA2.html`
 
 - **Consistent Structure**: Unified patterns across all courses
 
-### Touch Controls- **Error Handling**: Graceful degradation with helpful error messages
+- **Error Handling**: Graceful degradation with helpful error messages
 
-- **Swipe Left**: Next slide
 
-- **Swipe Right**: Previous slide## 🚀 Quick Start
 
-- **Tap Buttons**: Use on-screen navigation
+------### BA3: Project Management (Advanced)
 
-### Method 1: Direct File Access
 
-### Console Commands```bash
 
-```javascript# Clone or download the repository
+## 🚀 Quick Start**20 slides • 90-120 minutes**
 
-window.presentation.goToSlide(5);      // Jump to slide 6 (0-indexed)# Open any presentation file in your browser
 
-window.presentation.nextSlide();        // Advance one slideopen index.html     # macOS
 
-window.presentation.previousSlide();    // Go back one slidestart index.html    # Windows
-
-```xdg-open index.html # Linux
-
-```
-
----
-
-### Method 2: Local Web Server (Recommended)
-
-## ✨ Features```bash
-
-# Python 3
-
-### 🎨 User Experiencepython -m http.server 8000
-
-- **Smooth Animations**: CSS-based transitions
-
-- **Glass Morphism**: Modern glassmorphic design elements# Python 2
-
-- **Hover Effects**: Interactive card tooltipspython -m SimpleHTTPServer 8000
-
-- **Progress Tracking**: Visual progress bar with percentage
-
-- **Responsive Layout**: Mobile-first design# Node.js (with http-server)
-
-- **Professional Icons**: Font Awesome 6.4.0npx http-server -p 8000
-
-- **Custom Typography**: Google Fonts (Inter)
-
-# Then open: http://localhost:8000
-
-### ⌨️ Accessibility```
-
-- **Keyboard Navigation**: Complete keyboard control
-
-- **Touch Gestures**: Swipe support for mobile### Method 3: VS Code Live Server
-
-- **Screen Reader Support**: Proper ARIA labels1. Install "Live Server" extension
-
-- **High Contrast**: WCAG 2.1 Level AA compliant2. Right-click `index.html`
-
-- **Reduced Motion**: Respects user preferences3. Select "Open with Live Server"
-
-
-
-### 💻 Developer Experience### Method 4: VS Code Run & Debug
-
-- **No Build Process**: Edit files, refresh browser1. Press `F5` or click Run & Debug (▶️)
-
-- **Zero Dependencies**: No npm packages required2. Select a configuration:
-
-- **CDN Resources**: Tailwind CSS and Font Awesome   - "Open Homepage (index.html)"
-
-- **ES6 JavaScript**: Clean, modern vanilla JavaScript   - "Open BA1 Course"
-
-- **Consistent Structure**: Unified patterns across all courses   - "Open BA2 Course"
-
-   - "Open BA3 Course"
-
----   - "Launch with Live Server"
-
-
-
-## 🛠 Technology Stack## 🎮 Navigation
-
-
-
-### Core Technologies### Keyboard Shortcuts
-
-- **HTML5**: Semantic markup with ARIA support
-
-- **CSS3**: Grid, Flexbox, Animations| Shortcut | Action |
-
-- **JavaScript ES6+**: Classes, arrow functions, template literals|----------|--------|
-
-| `→` `Space` `Page Down` | Next slide |
-
-### External Resources (CDN)| `←` `Backspace` `Page Up` | Previous slide |
-
-- **Tailwind CSS 3.x**: Utility-first CSS framework| `Home` | First slide |
-
-- **Font Awesome 6.4.0**: Professional icon library| `End` | Last slide |
-
-- **Google Fonts (Inter)**: Modern sans-serif typeface| `?` | Toggle help panel |
-
-
-
-### Browser Support### Touch Controls
-
-- ✅ Chrome/Edge 90+- **Swipe Left**: Next slide (50px minimum)
-
-- ✅ Firefox 88+- **Swipe Right**: Previous slide (50px minimum)
-
-- ✅ Safari 14+- **Tap Buttons**: Use on-screen navigation
-
-- ✅ iOS Safari 14+
-
-- ✅ Chrome Android 90+### Console Commands
-
-```javascript
-
----window.goToSlide(5);      // Jump to slide 6 (0-indexed)
-
-window.nextSlide();        // Advance one slide
-
-## 📁 File Structurewindow.previousSlide();    // Go back one slide
-
-window.presentation.currentSlide;  // Current slide index
-
-```window.presentation.totalSlides;   // Total slide count
-
-Presentation/```
-
-├── index.html                    # Homepage with course catalog
-
-├── README.md                     # This file**Complete Documentation**: See [KEYBOARD_SHORTCUTS.md](KEYBOARD_SHORTCUTS.md)
-
-├── CLEANUP_SUMMARY.md            # Recent cleanup documentation
-
-├── GITHUB_UPLOAD_GUIDE.md        # How to upload to GitHub## 🛠 Technology Stack
-
-├── .gitignore                    # Git ignore rules
-
-├── .github/### Core Technologies
-
-│   └── copilot-instructions.md  # AI coding agent guidelines- **HTML5**: Semantic markup with ARIA support
-
-├── BA1/                         # Project Initiation Course- **CSS3**: Grid, Flexbox, Animations, Custom Properties
-
-│   ├── BA1.html                # Presentation HTML- **JavaScript ES6+**: Classes, arrow functions, template literals
-
-│   ├── app.js                  # Presentation logic (7.4 KB)
-
-│   └── data.js                 # 8 slides content### External Resources (CDN)
-
-├── BA2/                         # Fundamentals Course- **Tailwind CSS 3.x**: Utility-first CSS framework
-
-│   ├── BA2.html- **Font Awesome 6.4.0**: Professional icon library
-
-│   ├── ba2-app.js              # Presentation logic (7.4 KB)- **Google Fonts (Inter)**: Modern sans-serif typeface
-
-│   └── data2.js                # 16 slides content
-
-└── BA3/                         # Project Management Course### Browser Support
-
-    ├── BA3.html- ✅ Chrome/Edge 90+ (Chromium)
-
-    ├── ba3-app.js              # Presentation logic (7.4 KB)- ✅ Firefox 88+
-
-    ├── ba3-data-full.js        # 20+ slides content- ✅ Safari 14+
-
-    ├── README.md               # BA3 documentation- ✅ Opera 76+
-
-    ├── SLIDE_OUTLINE.md        # Course outline- ✅ iOS Safari 14+
-
-    └── STYLE_ALIGNMENT_SUMMARY.md  # Style guide- ✅ Chrome Android 90+
-
-```
-
-## 📁 File Structure
-
-**Total:** 14 essential files (clean and organized!)
-
-```
-
----Presentation/
-
-├── index.html                 # Homepage with course catalog
-
-## 💡 Development├── README.md                  # This file
-
-├── KEYBOARD_SHORTCUTS.md      # Complete navigation guide
-
-### Creating a New Slide├── .github/
-
-│   └── copilot-instructions.md   # AI coding agent guidelines
-
-Add to the `slides` array in the data file (`data.js`, `data2.js`, or `ba3-data-full.js`):├── .vscode/
-
-│   ├── launch.json           # Debug configurations
-
-```javascript│   └── tasks.json            # Automated tasks
-
-{├── BA1/                      # Project Initiation Course
-
-  title: "Slide Title",│   ├── BA1.html             # Presentation HTML
-
-  subtitle: "Optional subtitle",│   ├── app.js               # Enhanced presentation logic v2.0
-
-  type: "content",  // cover, content, summary│   └── data.js              # 8 slides content
-
-  notes: "PRESENTER: Action verbs, talking points, time estimate",├── BA2/                      # Fundamentals Course
-
-  content: `│   ├── BA2.html
-
-    <div class="card-hover bg-white p-6 rounded-xl border-2 border-blue-200">│   ├── ba2-app.js           # Enhanced presentation logic v2.0
-
-      <h3 class="text-xl font-bold text-blue-600 mb-3">✓ Section Title</h3>│   └── data2.js             # 16 slides content
-
-      <ul class="list-disc ml-5 text-gray-700 space-y-2">└── BA3/                      # Project Management Course
-
-        <li>Professional point with Tailwind classes</li>    ├── BA3.html
-
-        <li>Use → for process flow indicators</li>    ├── ba3-app.js           # Enhanced presentation logic v2.0
-
-        <li>Use ✓ for completed items</li>    ├── ba3-data-full.js     # 20 slides content
-
-      </ul>    ├── SLIDE_OUTLINE.md     # Course outline
-
-    </div>    └── STYLE_ALIGNMENT_SUMMARY.md   # Style guide
-
-  ````
-
-}
-
-```## 💡 Development
-
-
-
-### Hover Tooltip Pattern### Creating a New Deck (BA4 Example)
-
-
-
-CSS-only tooltips (no JavaScript):1. **Copy Template Files**
+### Method 1: Direct File Access## 🚀 Quick Start
 
 ```bash
 
-```htmlmkdir BA4
+# Clone or download the repositoryPM techniques & tools for BA projects:
 
-<div class="group cursor-pointer card-hover">cp BA1/BA1.html BA4/BA4.html
+# Open any presentation file in your browser
 
-  <div>Visible content</div>cp BA1/app.js BA4/ba4-app.js
+open index.html     # macOS### Method 1: Direct File Access (Simplest)- Business case & charter development
 
-  <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ```
+start index.html    # Windows
 
-              mt-2 p-2 bg-blue-50 rounded text-sm">
+xdg-open index.html # Linux```bash- CARD analysis & stakeholder management
 
-    💡 <strong>Tip:</strong> Hidden detail revealed on hover2. **Create Data File** (`BA4/ba4-data.js`)
+```
 
-  </div>```javascript
+# Double-click any HTML file in Windows Explorer- Project planning & communication
 
-</div>const slides = [
+### Method 2: Local Web Server (Recommended)
 
-```  {
+```bash# Or right-click and select "Open with" → Your Browser- Execution, control & project closure
 
-    title: "Course Title",
+# Python 3
+
+python -m http.server 8000
+
+
+
+# Python 2index.html      # Homepage with course catalog**Path**: `BA3/BA3.html`
+
+python -m SimpleHTTPServer 8000
+
+BA1/BA1.html    # Project Initiation course
+
+# Node.js (with http-server)
+
+npx http-server -p 8000BA2/BA2.html    # Fundamentals course## ✨ Features
+
+
+
+# Then open: http://localhost:8000BA3/BA3.html    # Project Management course
+
+```
+
+```### 🎨 User Experience
+
+### Method 3: VS Code Live Server
+
+1. Install "Live Server" extension- **Smooth Animations**: CSS-based transitions with reduced motion support
+
+2. Right-click `index.html`
+
+3. Select "Open with Live Server"### Method 2: Local Web Server (Recommended)- **Glass Morphism**: Modern glassmorphic design elements
+
+
+
+### Method 4: VS Code Run & Debug```bash- **Hover Effects**: Interactive card lifts and visual feedback
+
+1. Press `F5` or click Run & Debug (▶️)
+
+2. Select a configuration:# Python 3- **Progress Tracking**: Visual progress bar with percentage completion
+
+   - "Open Homepage (index.html)"
+
+   - "Open BA1 Course"python -m http.server 8000- **Responsive Layout**: Mobile-first design with breakpoint optimization
+
+   - "Open BA2 Course"
+
+   - "Open BA3 Course"- **Professional Icons**: Font Awesome 6.4.0 integration
+
+   - "Launch with Live Server"
+
+# Then open: http://localhost:8000- **Custom Typography**: Google Fonts (Inter family)
+
+---
+
+```
+
+## 🎮 Navigation
+
+### ⌨️ Navigation
+
+### Keyboard Shortcuts
+
+### Method 3: GitHub Pages (After Upload)- **Keyboard Shortcuts**: Full keyboard control (see [KEYBOARD_SHORTCUTS.md](KEYBOARD_SHORTCUTS.md))
+
+| Shortcut | Action |
+
+|----------|--------|```- **Touch Gestures**: Swipe left/right on mobile devices (50px threshold)
+
+| `→` `Space` `Page Down` | Next slide |
+
+| `←` `Backspace` `Page Up` | Previous slide |https://YOUR-USERNAME.github.io/BA-Training-Presentations/- **Mouse Controls**: Click-based navigation buttons
+
+| `Home` | First slide |
+
+| `End` | Last slide |```- **Direct Jump**: Home/End keys for quick access
+
+| `?` | Toggle help panel |
+
+- **Help System**: Press `?` to toggle shortcuts guide
+
+### Touch Controls
+
+- **Swipe Left**: Next slide (50px minimum)---
+
+- **Swipe Right**: Previous slide (50px minimum)
+
+- **Tap Buttons**: Use on-screen navigation### 🎯 Accessibility
+
+
+
+### Console Commands## 🎮 Navigation- **Screen Reader Support**: Proper ARIA labels and semantic HTML
+
+```javascript
+
+window.presentation.goToSlide(5);      // Jump to slide 6 (0-indexed)- **Keyboard-Only Navigation**: Complete access without mouse
+
+window.presentation.nextSlide();        // Advance one slide
+
+window.presentation.previousSlide();    // Go back one slide### Keyboard Shortcuts- **High Contrast**: WCAG 2.1 Level AA compliant color ratios
+
+window.presentation.currentSlide;       // Current slide index
+
+window.presentation.totalSlides;        // Total slide count- **Focus Indicators**: Clear visual focus states throughout
+
+```
+
+| Shortcut | Action |- **Reduced Motion**: Respects user's motion preferences
+
+---
+
+|----------|--------|
+
+## 🛠 Technology Stack
+
+| `→` `Space` | Next slide |### 💻 Developer Experience
+
+### Core Technologies
+
+- **HTML5**: Semantic markup with ARIA support| `←` `Backspace` | Previous slide |- **No Build Process**: Edit files, refresh browser—that's it
+
+- **CSS3**: Grid, Flexbox, Animations, Custom Properties
+
+- **JavaScript ES6+**: Classes, arrow functions, template literals| `Home` | First slide |- **Zero Dependencies**: No npm packages or bundlers required
+
+
+
+### External Resources (CDN)| `End` | Last slide |- **CDN Resources**: Tailwind CSS and Font Awesome via CDN
+
+- **Tailwind CSS 3.x**: Utility-first CSS framework
+
+- **Font Awesome 6.4.0**: Professional icon library| `?` | Toggle help |- **ES6+ JavaScript**: Modern vanilla JavaScript, no frameworks
+
+- **Google Fonts (Inter)**: Modern sans-serif typeface
+
+- **Consistent Structure**: Unified patterns across all courses
+
+### Browser Support
+
+- ✅ Chrome/Edge 90+ (Chromium)### Touch Controls- **Error Handling**: Graceful degradation with helpful error messages
+
+- ✅ Firefox 88+
+
+- ✅ Safari 14+- **Swipe Left**: Next slide
+
+- ✅ Opera 76+
+
+- ✅ iOS Safari 14+- **Swipe Right**: Previous slide## 🚀 Quick Start
+
+- ✅ Chrome Android 90+
+
+- **Tap Buttons**: Use on-screen navigation
+
+---
+
+### Method 1: Direct File Access
+
+## 📁 File Structure
+
+### Console Commands```bash
+
+```
+
+Presentation/```javascript# Clone or download the repository
+
+├── index.html                 # Homepage with course catalog
+
+├── README.md                  # This filewindow.presentation.goToSlide(5);      // Jump to slide 6 (0-indexed)# Open any presentation file in your browser
+
+├── .gitignore                 # Git ignore rules
+
+├── .github/window.presentation.nextSlide();        // Advance one slideopen index.html     # macOS
+
+│   └── copilot-instructions.md   # AI coding agent guidelines
+
+├── .vscode/window.presentation.previousSlide();    // Go back one slidestart index.html    # Windows
+
+│   ├── launch.json           # Debug configurations
+
+│   └── tasks.json            # Automated tasks```xdg-open index.html # Linux
+
+├── BA1/                      # Project Initiation Course
+
+│   ├── BA1.html             # Presentation HTML```
+
+│   ├── app.js               # Presentation logic (7.4 KB)
+
+│   └── data.js              # 8 slides content---
+
+├── BA2/                      # Fundamentals Course
+
+│   ├── BA2.html### Method 2: Local Web Server (Recommended)
+
+│   ├── ba2-app.js           # Presentation logic (7.4 KB)
+
+│   └── data2.js             # 16 slides content## ✨ Features```bash
+
+└── BA3/                      # Project Management Course
+
+    ├── BA3.html# Python 3
+
+    ├── ba3-app.js           # Presentation logic (7.4 KB)
+
+    ├── ba3-data-full.js     # 20 slides content### 🎨 User Experiencepython -m http.server 8000
+
+    ├── README.md            # BA3 documentation
+
+    ├── SLIDE_OUTLINE.md     # Course outline- **Smooth Animations**: CSS-based transitions
+
+    └── STYLE_ALIGNMENT_SUMMARY.md   # Style guide
+
+```- **Glass Morphism**: Modern glassmorphic design elements# Python 2
+
+
+
+---- **Hover Effects**: Interactive card tooltipspython -m SimpleHTTPServer 8000
+
+
+
+## 💡 Development- **Progress Tracking**: Visual progress bar with percentage
+
+
+
+### Creating a New Slide- **Responsive Layout**: Mobile-first design# Node.js (with http-server)
+
+
+
+Add to the `slides` array in the data file (`data.js`, `data2.js`, or `ba3-data-full.js`):- **Professional Icons**: Font Awesome 6.4.0npx http-server -p 8000
+
+
+
+```javascript- **Custom Typography**: Google Fonts (Inter)
+
+{
+
+  title: "Slide Title",# Then open: http://localhost:8000
+
+  subtitle: "Optional subtitle",
+
+  type: "content",  // cover, content, summary### ⌨️ Accessibility```
+
+  notes: "PRESENTER: Action verbs, talking points, time estimate",
+
+  content: `- **Keyboard Navigation**: Complete keyboard control
+
+    <div class="card-hover bg-white p-6 rounded-xl border-2 border-blue-200">
+
+      <h3 class="text-xl font-bold text-blue-600 mb-3">✓ Section Title</h3>- **Touch Gestures**: Swipe support for mobile### Method 3: VS Code Live Server
+
+      <ul class="list-disc ml-5 text-gray-700 space-y-2">
+
+        <li>Professional point with Tailwind classes</li>- **Screen Reader Support**: Proper ARIA labels1. Install "Live Server" extension
+
+        <li>Use → for process flow indicators</li>
+
+        <li>Use ✓ for completed items</li>- **High Contrast**: WCAG 2.1 Level AA compliant2. Right-click `index.html`
+
+      </ul>
+
+    </div>- **Reduced Motion**: Respects user preferences3. Select "Open with Live Server"
+
+  `
+
+}
+
+```
+
+### 💻 Developer Experience### Method 4: VS Code Run & Debug
+
+### CSS-Only Hover Tooltip Pattern
+
+- **No Build Process**: Edit files, refresh browser1. Press `F5` or click Run & Debug (▶️)
+
+```html
+
+<div class="group cursor-pointer card-hover">- **Zero Dependencies**: No npm packages required2. Select a configuration:
+
+  <div>Visible content</div>
+
+  <div class="mt-2 p-2 bg-blue-50 rounded text-sm opacity-0 - **CDN Resources**: Tailwind CSS and Font Awesome   - "Open Homepage (index.html)"
+
+              group-hover:opacity-100 transition-opacity duration-300">
+
+    <strong>Tip:</strong> Hidden detail revealed on hover- **ES6 JavaScript**: Clean, modern vanilla JavaScript   - "Open BA1 Course"
+
+  </div>
+
+</div>- **Consistent Structure**: Unified patterns across all courses   - "Open BA2 Course"
+
+```
+
+   - "Open BA3 Course"
+
+### Creating a New Deck (BA4 Example)
+
+---   - "Launch with Live Server"
+
+1. **Copy Template Files**
+
+```bash
+
+mkdir BA4
+
+cp BA1/BA1.html BA4/BA4.html## 🛠 Technology Stack## 🎮 Navigation
+
+cp BA1/app.js BA4/ba4-app.js
+
+```
+
+
+
+2. **Create Data File** (`BA4/ba4-data.js`)### Core Technologies### Keyboard Shortcuts
+
+```javascript
+
+const slides = [- **HTML5**: Semantic markup with ARIA support
+
+  {
+
+    title: "Course Title",- **CSS3**: Grid, Flexbox, Animations| Shortcut | Action |
+
+    subtitle: "Descriptive Subtitle",
+
+    type: "cover",- **JavaScript ES6+**: Classes, arrow functions, template literals|----------|--------|
+
+    notes: "PRESENTER: Action verbs, talking points, time estimate",
+
+    content: `| `→` `Space` `Page Down` | Next slide |
+
+      <div class="space-y-6">
+
+        <!-- Tailwind-styled HTML -->### External Resources (CDN)| `←` `Backspace` `Page Up` | Previous slide |
+
+      </div>
+
+    `- **Tailwind CSS 3.x**: Utility-first CSS framework| `Home` | First slide |
+
+  }
+
+];- **Font Awesome 6.4.0**: Professional icon library| `End` | Last slide |
+
+```
+
+- **Google Fonts (Inter)**: Modern sans-serif typeface| `?` | Toggle help panel |
+
+3. **Update HTML Script References**
+
+```html
+
+<!-- In BA4/BA4.html -->
+
+<script src="ba4-data.js"></script>### Browser Support### Touch Controls
+
+<script src="ba4-app.js"></script>
+
+```- ✅ Chrome/Edge 90+- **Swipe Left**: Next slide (50px minimum)
+
+
+
+4. **Add to Homepage** (`index.html`)- ✅ Firefox 88+- **Swipe Right**: Previous slide (50px minimum)
+
+
+
+### Code Conventions- ✅ Safari 14+- **Tap Buttons**: Use on-screen navigation
+
+
+
+**JavaScript**:- ✅ iOS Safari 14+
+
+- ES6+ syntax (classes, const/let, arrow functions)
+
+- Template literals for HTML generation- ✅ Chrome Android 90+### Console Commands
+
+- Defensive coding with null checks
+
+- Console warnings for debugging```javascript
+
+- No external dependencies
+
+---window.goToSlide(5);      // Jump to slide 6 (0-indexed)
+
+**CSS/Tailwind**:
+
+- Utility-first approachwindow.nextSlide();        // Advance one slide
+
+- Custom animations in `<style>` blocks
+
+- Glass morphism: `rgba(255,255,255,0.05)` + `backdrop-filter`## 📁 File Structurewindow.previousSlide();    // Go back one slide
+
+- Consistent color palette (primary blues)
+
+- Mobile-first responsive breakpointswindow.presentation.currentSlide;  // Current slide index
+
+
+
+**HTML**:```window.presentation.totalSlides;   // Total slide count
+
+- Semantic elements (`<header>`, `<main>`, `<nav>`, `<article>`)
+
+- ARIA labels for accessibilityPresentation/```
+
+- Proper heading hierarchy (h1 → h2 → h3)
+
+- Meta tags for SEO and mobile├── index.html                    # Homepage with course catalog
+
+
+
+**Emoji Usage**:├── README.md                     # This file**Complete Documentation**: See [KEYBOARD_SHORTCUTS.md](KEYBOARD_SHORTCUTS.md)
+
+- ✅ Use: ✓ checkmarks, → arrows, ⚠️ warnings (sparingly)
+
+- ❌ Avoid: 💡 🚀 📊 🎯 and other decorative emojis in professional content├── CLEANUP_SUMMARY.md            # Recent cleanup documentation
+
+
+
+---├── GITHUB_UPLOAD_GUIDE.md        # How to upload to GitHub## 🛠 Technology Stack
+
+
+
+## ♿ Accessibility├── .gitignore                    # Git ignore rules
+
+
+
+### WCAG 2.1 Level AA Compliance├── .github/### Core Technologies
+
+- **Color Contrast**: 4.5:1 minimum for normal text, 3:1 for large text
+
+- **Keyboard Navigation**: All functionality available via keyboard│   └── copilot-instructions.md  # AI coding agent guidelines- **HTML5**: Semantic markup with ARIA support
+
+- **Screen Reader Support**: Tested with NVDA, JAWS, VoiceOver
+
+- **Focus Management**: Visible focus indicators (2px outline)├── BA1/                         # Project Initiation Course- **CSS3**: Grid, Flexbox, Animations, Custom Properties
+
+- **Motion**: Respects `prefers-reduced-motion` setting
+
+│   ├── BA1.html                # Presentation HTML- **JavaScript ES6+**: Classes, arrow functions, template literals
+
+### Accessibility Features
+
+- **Semantic HTML**: Proper landmark regions│   ├── app.js                  # Presentation logic (7.4 KB)
+
+- **ARIA Labels**: Descriptive labels on all interactive elements
+
+- **Live Regions**: `aria-live="polite"` for slide changes│   └── data.js                 # 8 slides content### External Resources (CDN)
+
+- **Error Handling**: Graceful degradation with helpful messages
+
+- **Print Support**: Print-optimized views without navigation├── BA2/                         # Fundamentals Course- **Tailwind CSS 3.x**: Utility-first CSS framework
+
+
+
+### Testing Tools│   ├── BA2.html- **Font Awesome 6.4.0**: Professional icon library
+
+- Chrome Lighthouse (Accessibility score: 95+)
+
+- axe DevTools browser extension│   ├── ba2-app.js              # Presentation logic (7.4 KB)- **Google Fonts (Inter)**: Modern sans-serif typeface
+
+- WAVE Web Accessibility Evaluation Tool
+
+- Manual keyboard-only navigation testing│   └── data2.js                # 16 slides content
+
+
+
+---└── BA3/                         # Project Management Course### Browser Support
+
+
+
+## 🧪 Testing Checklist    ├── BA3.html- ✅ Chrome/Edge 90+ (Chromium)
+
+
+
+### Functional Testing    ├── ba3-app.js              # Presentation logic (7.4 KB)- ✅ Firefox 88+
+
+- [ ] All slides render correctly in all courses
+
+- [ ] Keyboard navigation works (all shortcuts)    ├── ba3-data-full.js        # 20+ slides content- ✅ Safari 14+
+
+- [ ] Touch gestures function on mobile/tablet
+
+- [ ] Progress bar updates accurately    ├── README.md               # BA3 documentation- ✅ Opera 76+
+
+- [ ] Help panel toggles with `?` key
+
+- [ ] Console shows no errors    ├── SLIDE_OUTLINE.md        # Course outline- ✅ iOS Safari 14+
+
+- [ ] Previous/Next buttons disable appropriately
+
+- [ ] "Finish" text appears on last slide    └── STYLE_ALIGNMENT_SUMMARY.md  # Style guide- ✅ Chrome Android 90+
+
+
+
+### Cross-Browser Testing```
+
+- [ ] Chrome/Edge (Windows, macOS)
+
+- [ ] Firefox (Windows, macOS, Linux)## 📁 File Structure
+
+- [ ] Safari (macOS, iOS)
+
+- [ ] Mobile browsers (iOS Safari, Chrome Android)**Total:** 14 essential files (clean and organized!)
+
+
+
+### Responsive Testing```
+
+- [ ] Mobile (320px - 767px)
+
+- [ ] Tablet (768px - 1023px)---Presentation/
+
+- [ ] Desktop (1024px+)
+
+- [ ] Print layout (navigation hidden)├── index.html                 # Homepage with course catalog
+
+
+
+### Accessibility Testing## 💡 Development├── README.md                  # This file
+
+- [ ] Lighthouse accessibility score 95+
+
+- [ ] Keyboard-only navigation complete├── KEYBOARD_SHORTCUTS.md      # Complete navigation guide
+
+- [ ] Screen reader announces correctly
+
+- [ ] Focus visible on all elements### Creating a New Slide├── .github/
+
+- [ ] Color contrast meets WCAG AA
+
+│   └── copilot-instructions.md   # AI coding agent guidelines
+
+---
+
+Add to the `slides` array in the data file (`data.js`, `data2.js`, or `ba3-data-full.js`):├── .vscode/
+
+## 🐛 Troubleshooting
+
+│   ├── launch.json           # Debug configurations
+
+### Keyboard Shortcuts Not Working
+
+- Ensure presentation has focus (click on slide first)```javascript│   └── tasks.json            # Automated tasks
+
+- Check for browser extension conflicts
+
+- Verify JavaScript is enabled{├── BA1/                      # Project Initiation Course
+
+- Try refreshing the page
+
+  title: "Slide Title",│   ├── BA1.html             # Presentation HTML
+
+### Touch Gestures Not Responding
+
+- Swipe distance must exceed 50 pixels  subtitle: "Optional subtitle",│   ├── app.js               # Enhanced presentation logic v2.0
+
+- Swipe horizontally, not vertically
+
+- Don't start swipe on navigation buttons  type: "content",  // cover, content, summary│   └── data.js              # 8 slides content
+
+- Try in different mobile browser
+
+  notes: "PRESENTER: Action verbs, talking points, time estimate",├── BA2/                      # Fundamentals Course
+
+### Styles Not Loading
+
+- Check internet connection (CDN resources)  content: `│   ├── BA2.html
+
+- Verify Tailwind CSS CDN is accessible
+
+- Try opening in incognito/private mode    <div class="card-hover bg-white p-6 rounded-xl border-2 border-blue-200">│   ├── ba2-app.js           # Enhanced presentation logic v2.0
+
+- Check browser console for errors
+
+      <h3 class="text-xl font-bold text-blue-600 mb-3">✓ Section Title</h3>│   └── data2.js             # 16 slides content
+
+### Help Panel Won't Show
+
+- Press Shift + `/` for `?` character      <ul class="list-disc ml-5 text-gray-700 space-y-2">└── BA3/                      # Project Management Course
+
+- Ensure JavaScript is enabled
+
+- Check browser console for errors        <li>Professional point with Tailwind classes</li>    ├── BA3.html
+
+- Verify helpBtn element exists
+
+        <li>Use → for process flow indicators</li>    ├── ba3-app.js           # Enhanced presentation logic v2.0
+
+---
+
+        <li>Use ✓ for completed items</li>    ├── ba3-data-full.js     # 20 slides content
+
+## 📄 License
+
+      </ul>    ├── SLIDE_OUTLINE.md     # Course outline
+
+© 2025 Pat Nacario. All rights reserved.
+
+    </div>    └── STYLE_ALIGNMENT_SUMMARY.md   # Style guide
+
+**Proprietary Software**: This project is proprietary and confidential. Unauthorized copying, distribution, modification, or use is strictly prohibited without explicit written permission from the author.
+
+  ````
+
+---
+
+}
+
+## 👤 Author
+
+```## 💡 Development
+
+**Pat Nacario**  
+
+IT Business Analyst & Training Developer  
+
+Specializing in Requirements Management & Stakeholder Engagement
+
+### Hover Tooltip Pattern### Creating a New Deck (BA4 Example)
+
+---
+
+
+
+## 📊 Version History
+
+CSS-only tooltips (no JavaScript):1. **Copy Template Files**
+
+### Version 2.0 (October 2025)
+
+- ✅ Cleaned and simplified codebase (76% reduction)```bash
+
+- ✅ Removed all advanced features for simplicity
+
+- ✅ Enhanced documentation and guides```htmlmkdir BA4
+
+- ✅ Published to GitHub
+
+- ✅ Professional README and project structure<div class="group cursor-pointer card-hover">cp BA1/BA1.html BA4/BA4.html
+
+
+
+### Version 1.0 (Initial Release)  <div>Visible content</div>cp BA1/app.js BA4/ba4-app.js
+
+- ✅ BA1, BA2, BA3 course content
+
+- ✅ Basic navigation and styling  <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300 ```
+
+- ✅ Responsive design
+
+- ✅ Keyboard and touch support              mt-2 p-2 bg-blue-50 rounded text-sm">
+
+
+
+---    💡 <strong>Tip:</strong> Hidden detail revealed on hover2. **Create Data File** (`BA4/ba4-data.js`)
+
+
+
+<div align="center">  </div>```javascript
+
+
+
+**[⬆ Back to Top](#business-analysis-training-presentations)**</div>const slides = [
+
+
+
+Made with care for Business Analysts 💼```  {
+
+
+
+</div>    title: "Course Title",
+
 
 ### Creating a New Deck (BA4 Example)    subtitle: "Descriptive Subtitle",
 
