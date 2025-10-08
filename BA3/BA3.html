@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Project Management Techniques & Tools - Professional Training">
+    <meta name="author" content="Pat Nacario">
+    <title>BA3: Project Management | Professional Training</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background-attachment: fixed;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-enter {
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+        }
+        
+        #slideContainer::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        #slideContainer::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        #slideContainer::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        
+        #slideContainer::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+        
+        .keyboard-hint {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 16px;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+            font-size: 0.75rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .keyboard-hint.show {
+            opacity: 1;
+        }
+        
+        .keyboard-hint kbd {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 2px 6px;
+            font-family: monospace;
+            font-size: 0.7rem;
+            color: #475569;
+        }
+        
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                background: white;
+            }
+            
+            #slideContainer {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Header Bar -->
+    <header class="fixed top-0 left-0 right-0 z-50 no-print">
+        <div class="max-w-7xl mx-auto px-4 py-3">
+            <div class="glass-card rounded-xl px-6 py-3 flex items-center justify-between shadow-xl">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-diagram-project text-white text-lg"></i>
+                    </div>
+                    <div>
+                        <span class="text-white font-semibold text-base hidden sm:inline">BA3: Project Management</span>
+                        <span class="text-white font-semibold text-base sm:hidden">Project Management</span>
+                        <p class="text-white/70 text-xs hidden sm:block">Advanced Course</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <a href="../index.html" class="text-white hover:text-white/80 transition-colors hidden sm:block" title="Back to Home">
+                        <i class="fas fa-home text-lg"></i>
+                    </a>
+                    <button id="helpBtn" class="text-white hover:text-white/80 transition-colors" title="Keyboard Shortcuts">
+                        <i class="fas fa-circle-info text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Presentation Container -->
+    <main class="min-h-screen flex items-center justify-center p-4 pt-20">
+        <div class="w-full max-w-6xl">
+            <!-- Progress Bar -->
+            <div class="mb-6 no-print">
+                <div class="flex items-center justify-between mb-2">
+                    <div class="flex items-center gap-2">
+                        <i class="fas fa-tasks text-white text-sm"></i>
+                        <span class="text-white text-sm font-medium">Progress</span>
+                    </div>
+                    <span id="progressPercent" class="text-white text-sm font-semibold">0%</span>
+                </div>
+                <div class="glass-card rounded-full h-2.5 overflow-hidden">
+                    <div id="progressBar" class="bg-primary-500 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
+                </div>
+            </div>
+
+            <!-- Slide Content Card -->
+            <article id="slideContainer" 
+                     class="bg-white rounded-2xl shadow-2xl p-8 sm:p-10 md:p-12 min-h-[600px] overflow-y-auto max-h-[75vh]"
+                     role="main"
+                     aria-live="polite">
+                <!-- Loading State -->
+                <div class="flex items-center justify-center min-h-[500px]">
+                    <div class="text-center">
+                        <div class="animate-spin rounded-full h-12 w-12 border-b-2 border-primary-600 mx-auto mb-4"></div>
+                        <p class="text-gray-500">Loading presentation...</p>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Navigation Controls -->
+            <nav class="flex justify-between items-center mt-6 no-print" aria-label="Slide navigation">
+                <!-- Previous Button -->
+                <button id="prevBtn" 
+                        class="glass-card px-6 py-3 rounded-lg text-white font-medium hover:bg-white/10 transition-all duration-300 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                        aria-label="Previous slide">
+                    <i class="fas fa-chevron-left"></i>
+                    <span class="hidden sm:inline">Previous</span>
+                </button>
+
+                <!-- Slide Counter -->
+                <div class="glass-card px-4 py-3 rounded-lg flex items-center gap-3">
+                    <i class="fas fa-file-powerpoint text-white text-sm"></i>
+                    <span id="slideNumber" class="text-white font-semibold text-sm">1</span>
+                    <span class="text-white/50 text-sm">/</span>
+                    <span id="totalSlides" class="text-white/70 text-sm">-</span>
+                </div>
+
+                <!-- Next Button -->
+                <button id="nextBtn" 
+                        class="glass-card px-6 py-3 rounded-lg text-white font-medium hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
+                        aria-label="Next slide">
+                    <span class="hidden sm:inline">Next</span>
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </nav>
+        </div>
+    </main>
+
+    <!-- Keyboard Shortcuts Helper -->
+    <div class="keyboard-hint" id="keyboardHint">
+        <div class="text-gray-800 font-semibold mb-2 text-sm">
+            <i class="fas fa-keyboard mr-1"></i> Keyboard Shortcuts
+        </div>
+        <div class="space-y-1 text-gray-600 text-xs">
+            <div><kbd>→</kbd> <kbd>Space</kbd> Next slide</div>
+            <div><kbd>←</kbd> <kbd>Backspace</kbd> Previous slide</div>
+            <div><kbd>Home</kbd> First slide | <kbd>End</kbd> Last slide</div>
+            <div><kbd>?</kbd> Toggle this help</div>
+        </div>
+    </div>
+
+    <!-- Data Script (loads slide content) -->
+    <script src="ba3-data-full.js"></script>
+    
+    <!-- Application Script (presentation logic) -->
+    <script src="ba3-app.js"></script>
+    
+    <!-- Controller Script -->
+    <script>
+        // Initialize presentation when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof PresentationApp !== 'undefined' && typeof slides !== 'undefined') {
+                window.presentation = new PresentationApp();
+                
+                // Helper functions for console
+                window.nextSlide = () => window.presentation.nextSlide();
+                window.previousSlide = () => window.presentation.previousSlide();
+                window.goToSlide = (index) => window.presentation.goToSlide(index);
+                
+                // Help button handler
+                const helpBtn = document.getElementById('helpBtn');
+                const keyboardHint = document.getElementById('keyboardHint');
+                
+                helpBtn.addEventListener('click', () => {
+                    keyboardHint.classList.toggle('show');
+                    setTimeout(() => {
+                        keyboardHint.classList.remove('show');
+                    }, 5000);
+                });
+            } else {
+                console.error('PresentationApp or slides data not loaded!');
+            }
+        });
+    </script>
+</body>
+</html>

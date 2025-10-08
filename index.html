@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Business Analysis Professional Training - Enterprise-grade courses">
+    <meta name="author" content="Pat Nacario">
+    <title>Business Analysis Training | Professional Development</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script> <!-- Tailwind CSS CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> <!-- Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">   <!-- Google Fonts -->
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            200: '#bfdbfe',
+                            300: '#93c5fd',
+                            400: '#60a5fa',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        dark: {
+                            50: '#f8fafc',
+                            100: '#f1f5f9',
+                            200: '#e2e8f0',
+                            300: '#cbd5e1',
+                            400: '#94a3b8',
+                            500: '#64748b',
+                            600: '#475569',
+                            700: '#334155',
+                            800: '#1e293b',
+                            900: '#0f172a',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            font-family: 'Inter', system-ui, sans-serif;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background-attachment: fixed;
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .card-gradient {
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(37, 99, 235, 0.05) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+        }
+        
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+        }
+        
+        .hover-lift:active {
+            transform: translateY(-4px);
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-30px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        .fade-in-delay {
+            animation: fadeIn 0.8s ease-out 0.3s both;
+        }
+        
+        .slide-in-left {
+            animation: slideInLeft 0.6s ease-out;
+        }
+        
+        .section-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+        }
+        
+        .glass-morphism {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .btn-primary {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+        
+        .btn-primary:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+        
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto;
+            }
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Navigation Header -->
+    <header role="banner">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <nav class="glass-morphism rounded-2xl px-6 py-4" role="navigation" aria-label="Main navigation">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center gap-3">
+                        <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
+                            <i class="fas fa-graduation-cap text-primary-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h1 class="text-white font-display font-bold text-lg">BA Training</h1>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <a href="#courses" class="hidden sm:block text-white hover:text-white/80 transition-colors text-sm font-medium">
+                            Courses
+                        </a>
+                        <a href="#about" class="hidden sm:block text-white hover:text-white/80 transition-colors text-sm font-medium">
+                            About
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center px-4 pt-20">
+        <div class="max-w-7xl mx-auto w-full">
+            <div class="text-center mb-16 fade-in">
+                <div class="inline-flex items-center gap-2 glass-card px-4 py-2 rounded-full text-white/90 text-sm font-medium mb-6">
+                    <span class="w-2 h-2 bg-primary-400 rounded-full animate-pulse"></span>
+                    IT Business Analyst Training Program
+                </div>
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight">
+                    Business Analysis<br/>
+                    <span class="text-primary-400">Training Guide</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+                    Comprehensive training covering requirements management, stakeholder analysis, and modern BA frameworks
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <a href="#courses" 
+                       class="btn-primary bg-primary-600 hover:bg-primary-700 text-white px-8 py-3.5 rounded-lg font-medium transition-all duration-200 flex items-center gap-2 shadow-lg hover:shadow-xl"
+                       role="button">
+                        <span>View Courses</span>
+                        <i class="fas fa-arrow-right text-sm"></i>
+                    </a>
+                    <a href="BA1/BA1.html" 
+                       class="glass-card text-white px-8 py-3.5 rounded-lg font-medium hover:bg-white/10 transition-all duration-200 shadow-md hover:shadow-lg"
+                       role="button">
+                        Start Learning
+                    </a>
+                </div>
+            </div>
+
+            <!-- Stats Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 max-w-3xl mx-auto mb-16 fade-in-delay">
+                <div class="glass-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-white mb-1">40+</div>
+                    <div class="text-white/60 text-sm">Training Slides</div>
+                </div>
+                <div class="glass-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-white mb-1">3</div>
+                    <div class="text-white/60 text-sm">Full Courses</div>
+                </div>
+                <div class="glass-card rounded-lg p-6 text-center">
+                    <div class="text-3xl font-bold text-white mb-1">10+</div>
+                    <div class="text-white/60 text-sm">Frameworks</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-20 px-4" role="region" aria-labelledby="courses-heading">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 slide-in-left">
+                <h2 id="courses-heading" class="text-3xl sm:text-4xl font-bold text-white mb-3">
+                    Training Courses
+                </h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto">
+                    Professional development paths for business analysts
+                </p>
+            </div>
+
+            <div class="section-divider mb-12"></div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+                <!-- BA1 Course Card -->
+                <div class="bg-white rounded-lg overflow-hidden hover-lift">
+                    <div class="card-gradient p-6 border-b border-primary-200">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-rocket text-white text-xl"></i>
+                            </div>
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-xs font-medium">
+                                Foundation
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-900 mb-2">BA1: Project Initiation</h3>
+                        <p class="text-dark-600">Essential concepts for starting BA projects effectively</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">PM vs BA Role Distinction</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">Requirements Management Planning</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">Stakeholder Analysis & Engagement</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">Performance Measures & KPIs</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-6 pb-6 border-b border-dark-200">
+                            <div class="flex items-center gap-2 text-dark-500 text-sm">
+                                <i class="fas fa-presentation"></i>
+                                <span>8 Slides</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-dark-500 text-sm">
+                                <i class="fas fa-clock"></i>
+                                <span>30-45 min</span>
+                            </div>
+                        </div>
+                        <a href="BA1/BA1.html" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
+                            Start Course
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BA2 Course Card -->
+                <div class="bg-white rounded-lg overflow-hidden hover-lift">
+                    <div class="card-gradient p-6 border-b border-primary-200">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-chart-line text-white text-xl"></i>
+                            </div>
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-xs font-medium">
+                                Comprehensive
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-900 mb-2">BA2: Fundamentals</h3>
+                        <p class="text-dark-600">Complete guide to business analysis practices and frameworks</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">SMART Requirements & Methodologies</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">Agile & Predictive Frameworks</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">Elicitation & Visual Modeling</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">BRD Structure & Approval Process</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-6 pb-6 border-b border-dark-200">
+                            <div class="flex items-center gap-2 text-dark-500 text-sm">
+                                <i class="fas fa-presentation"></i>
+                                <span>16 Slides</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-dark-500 text-sm">
+                                <i class="fas fa-clock"></i>
+                                <span>90-120 min</span>
+                            </div>
+                        </div>
+                        <a href="BA2/BA2.html" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
+                            Start Course
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BA3 Course Card -->
+                <div class="bg-white rounded-lg overflow-hidden hover-lift">
+                    <div class="card-gradient p-6 border-b border-primary-200">
+                        <div class="flex items-start justify-between mb-4">
+                            <div class="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-graduation-cap text-white text-xl"></i>
+                            </div>
+                            <span class="bg-primary-100 text-primary-700 px-3 py-1 rounded-full text-xs font-medium">
+                                Comprehensive
+                            </span>
+                        </div>
+                        <h3 class="text-2xl font-bold text-dark-900 mb-2">BA3: Project Management</h3>
+                        <p class="text-dark-600">Complete PM techniques & tools for BA projects</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="space-y-3 mb-6">
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">Business Case & Charter Development</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">CARD Analysis & Stakeholder Management</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">Project Planning & Communication</span>
+                            </div>
+                            <div class="flex items-start gap-3 text-sm">
+                                <i class="fas fa-circle-check text-primary-600 mt-0.5"></i>
+                                <span class="text-dark-700">Execution, Control & Project Closure</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between mb-6 pb-6 border-b border-dark-200">
+                            <div class="flex items-center gap-2 text-dark-500 text-sm">
+                                <i class="fas fa-presentation"></i>
+                                <span>20 Slides</span>
+                            </div>
+                            <div class="flex items-center gap-2 text-dark-500 text-sm">
+                                <i class="fas fa-clock"></i>
+                                <span>90-120 min</span>
+                            </div>
+                        </div>
+                        <a href="BA3/BA3.html" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
+                            View Course
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 px-4" role="region" aria-labelledby="features-heading">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 id="features-heading" class="text-3xl sm:text-4xl font-bold text-white mb-3">
+                    Professional Features
+                </h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto">
+                    Enterprise-grade training materials designed for real-world application
+                </p>
+            </div>
+
+            <div class="section-divider mb-12"></div>
+
+            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all">
+                    <div class="w-12 h-12 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-lightbulb text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Practical Examples</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Real-world scenarios from industry experience</p>
+                </div>
+
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all">
+                    <div class="w-12 h-12 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-diagram-project text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Visual Diagrams</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Professional BPMN, UML, ERD modeling techniques</p>
+                </div>
+
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all">
+                    <div class="w-12 h-12 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-list-check text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Comprehensive Coverage</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">From initiation to requirements approval</p>
+                </div>
+
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all">
+                    <div class="w-12 h-12 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-mobile-screen text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Responsive Design</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Works on desktop, tablet, and mobile devices</p>
+                </div>
+
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all">
+                    <div class="w-12 h-12 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-keyboard text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Interactive Navigation</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Keyboard shortcuts and tooltips included</p>
+                </div>
+
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all">
+                    <div class="w-12 h-12 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                        <i class="fas fa-award text-primary-400 text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-semibold text-white mb-2">Enterprise Quality</h3>
+                    <p class="text-white/70 text-sm leading-relaxed">Suitable for corporate training environments</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 px-4 border-t border-white/10" role="contentinfo">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 bg-primary-600 rounded-lg flex items-center justify-center" aria-hidden="true">
+                        <i class="fas fa-network-wired text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-white font-semibold text-sm">Business Analysis Training</h3>
+                        <p class="text-white/60 text-xs">Professional Development</p>
+                    </div>
+                </div>
+                <div class="text-white/60 text-xs text-center md:text-right">
+                    <p>&copy; 2025 Pat Nacario. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
