@@ -1326,7 +1326,80 @@ When viewing presentations:
 - Easy to add your own content
 - **Status:** Template - Add your content here!
 
-## 🛠️ Troubleshooting
+## � Debugging & Development Tools
+
+**NEW in v2.0:** Enhanced debugging capabilities across all presentations!
+
+### Available Tools
+
+#### 1. **Shared Utilities** (`shared-utils.js`)
+Global utilities for error handling, logging, and validation.
+
+```javascript
+// In browser console:
+BAUtils.Logger.info('Test message');
+BAUtils.PerformanceTracker.start('operation');
+BAUtils.checkBrowserCompatibility();
+```
+
+#### 2. **Presentation Debug API**
+Available in all presentation pages (BA1, BA2, BA3):
+
+```javascript
+// View current state
+PresentationDebug.state();
+
+// Show debug panel
+PresentationDebug.info();
+
+// Validate slides
+PresentationDebug.validate();
+
+// Navigate to slide
+PresentationDebug.goTo(5);
+
+// Enable dev mode
+PresentationDebug.enableDevMode();
+```
+
+#### 3. **Slide Data API** (BA3 only)
+Enhanced validation and statistics for BA3:
+
+```javascript
+// Get statistics
+SlideDataAPI.getStats();
+// → { total: 20, byType: {...}, estimatedTimeMinutes: 95 }
+
+// Find slides by type
+SlideDataAPI.findByType('content');
+
+// Validate all slides
+SlideDataAPI.validate();
+```
+
+### Quick Debug Commands
+
+```javascript
+// Check if everything loaded
+typeof BAUtils !== 'undefined' && 
+typeof slides !== 'undefined' && 
+typeof PresentationDebug !== 'undefined'
+
+// Get full presentation state
+PresentationDebug.state()
+
+// Enable maximum logging
+PresentationDebug.enableDevMode()
+```
+
+### 📖 Complete Documentation
+- **Full Debugging Guide:** See `DEBUGGING_GUIDE.md`
+- **BA3 Data Guide:** See `BA3/DATA_STRUCTURE_GUIDE.md`
+- **BA3 Enhancements:** See `BA3/ENHANCEMENT_SUMMARY.md`
+
+---
+
+## �🛠️ Troubleshooting
 
 ### "Run and Debug" not working?
 - Make sure you have Chrome installed

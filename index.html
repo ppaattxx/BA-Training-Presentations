@@ -148,6 +148,75 @@
             height: 300px;
         }
         
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .modal.active {
+            display: flex;
+            opacity: 1;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .modal-content {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            margin: auto;
+            padding: 0;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-header {
+            background: rgba(59, 130, 246, 0.1);
+            padding: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1.5rem 1.5rem 0 0;
+        }
+        
+        .modal-body {
+            padding: 2rem;
+        }
+        
+        .close-modal {
+            color: #fff;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+            transition: all 0.3s ease;
+        }
+        
+        .close-modal:hover,
+        .close-modal:focus {
+            color: #60a5fa;
+            transform: rotate(90deg);
+        }
+        
         @media (prefers-reduced-motion: reduce) {
             html {
                 scroll-behavior: auto;
@@ -165,7 +234,7 @@
     <header role="banner">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
             <nav class="glass-morphism rounded-2xl px-6 py-4" role="navigation" aria-label="Main navigation">
-                <div class="flex items-center justify-between">
+                <div class="flex items-center justify-between"> 
                     <div class="flex items-center gap-3">
                         <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-lg">
                             <i class="fas fa-graduation-cap text-primary-600 text-xl"></i>
@@ -177,6 +246,9 @@
                     <div class="flex items-center gap-4">
                         <a href="#courses" class="hidden sm:block text-white hover:text-white/80 transition-colors text-sm font-medium">
                             Courses
+                        </a>
+                        <a href="#materials" class="hidden sm:block text-white hover:text-white/80 transition-colors text-sm font-medium">
+                            Materials
                         </a>
                         <a href="#about" class="hidden sm:block text-white hover:text-white/80 transition-colors text-sm font-medium">
                             About
@@ -293,9 +365,14 @@
                                 <span>30-45 min</span>
                             </div>
                         </div>
-                        <a href="BA1/BA1.html" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
-                            Start Course
-                        </a>
+                        <div class="flex gap-3">
+                            <a href="BA1/BA1.html" class="flex-1 bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
+                                Start Course
+                            </a>
+                            <button onclick="openModal('ba1')" class="px-4 bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -342,9 +419,14 @@
                                 <span>90-120 min</span>
                             </div>
                         </div>
-                        <a href="BA2/BA2.html" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
-                            Start Course
-                        </a>
+                        <div class="flex gap-3">
+                            <a href="BA2/BA2.html" class="flex-1 bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
+                                Start Course
+                            </a>
+                            <button onclick="openModal('ba2')" class="px-4 bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
 
@@ -391,8 +473,94 @@
                                 <span>90-120 min</span>
                             </div>
                         </div>
-                        <a href="BA3/BA3.html" class="block w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
-                            Start Course
+                        <div class="flex gap-3">
+                            <a href="BA3/BA3.html" class="flex-1 bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors">
+                                Start Course
+                            </a>
+                            <button onclick="openModal('ba3')" class="px-4 bg-white border-2 border-primary-600 text-primary-600 hover:bg-primary-50 rounded-lg font-medium transition-colors">
+                                <i class="fas fa-info-circle"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Materials Section -->
+    <section id="materials" class="py-20 px-4" role="region" aria-labelledby="materials-heading">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 id="materials-heading" class="text-3xl sm:text-4xl font-bold text-white mb-3">
+                    Course Materials
+                </h2>
+                <p class="text-lg text-white/70 max-w-2xl mx-auto">
+                    Download comprehensive DOCX documentation for each course
+                </p>
+            </div>
+
+            <div class="section-divider mb-12"></div>
+
+            <div class="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+                <!-- BA1 Document -->
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-word text-primary-400 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">BA1 Documentation</h3>
+                        <p class="text-white/70 text-sm mb-4">Project Initiation Guide</p>
+                        <div class="flex items-center gap-2 text-white/60 text-xs mb-6">
+                            <i class="fas fa-file-lines"></i>
+                            <span>DOCX Format</span>
+                        </div>
+                        <a href="file/BA1.docx" 
+                           download
+                           class="w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i>
+                            Download BA1
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BA2 Document -->
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-word text-primary-400 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">BA2 Documentation</h3>
+                        <p class="text-white/70 text-sm mb-4">Fundamentals Guide</p>
+                        <div class="flex items-center gap-2 text-white/60 text-xs mb-6">
+                            <i class="fas fa-file-lines"></i>
+                            <span>DOCX Format</span>
+                        </div>
+                        <a href="file/BA2.docx" 
+                           download
+                           class="w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i>
+                            Download BA2
+                        </a>
+                    </div>
+                </div>
+
+                <!-- BA3 Document -->
+                <div class="glass-card rounded-lg p-6 hover:bg-white/10 transition-all hover-lift">
+                    <div class="flex flex-col items-center text-center">
+                        <div class="w-16 h-16 bg-primary-600/20 rounded-lg flex items-center justify-center mb-4">
+                            <i class="fas fa-file-word text-primary-400 text-3xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">BA3 Documentation</h3>
+                        <p class="text-white/70 text-sm mb-4">Project Management Guide</p>
+                        <div class="flex items-center gap-2 text-white/60 text-xs mb-6">
+                            <i class="fas fa-file-lines"></i>
+                            <span>DOCX Format</span>
+                        </div>
+                        <a href="file/BA3.docx" 
+                           download
+                           class="w-full bg-primary-600 hover:bg-primary-700 text-white text-center py-3 rounded-lg font-medium transition-colors flex items-center justify-center gap-2">
+                            <i class="fas fa-download"></i>
+                            Download BA3
                         </a>
                     </div>
                 </div>
@@ -485,5 +653,242 @@
             </div>
         </div>
     </footer>
+
+    <!-- Course Detail Modals -->
+    <div id="courseModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close-modal" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle" class="text-2xl font-bold text-white"></h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <!-- Content will be loaded dynamically -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal JavaScript -->
+    <script>
+        const courseData = {
+            ba1: {
+                title: 'BA1: Project Initiation - Foundation Course',
+                description: 'Master the essential concepts and skills needed to successfully initiate business analysis projects.',
+                duration: '30-45 minutes',
+                slides: 8,
+                level: 'Foundation',
+                objectives: [
+                    'Understand the distinction between Project Manager and Business Analyst roles',
+                    'Create effective requirements management plans',
+                    'Conduct thorough stakeholder analysis and develop engagement strategies',
+                    'Define and track performance measures and KPIs',
+                    'Apply best practices for project initiation'
+                ],
+                topics: [
+                    { name: 'PM vs BA Roles', icon: 'fa-users-gear', description: 'Understanding role boundaries and responsibilities' },
+                    { name: 'Requirements Planning', icon: 'fa-list-check', description: 'Creating comprehensive requirements management plans' },
+                    { name: 'Stakeholder Analysis', icon: 'fa-people-group', description: 'Identifying and engaging stakeholders effectively' },
+                    { name: 'Performance Metrics', icon: 'fa-chart-line', description: 'Defining KPIs and success measures' }
+                ],
+                prerequisites: 'No prerequisites required. Suitable for beginners.',
+                whatYouLearn: [
+                    'Foundation concepts of business analysis',
+                    'Stakeholder identification and management techniques',
+                    'Requirements planning methodologies',
+                    'Performance measurement strategies'
+                ]
+            },
+            ba2: {
+                title: 'BA2: Business Analysis Fundamentals - Comprehensive Course',
+                description: 'Deep dive into business analysis practices, methodologies, and frameworks used in professional environments.',
+                duration: '90-120 minutes',
+                slides: 16,
+                level: 'Comprehensive',
+                objectives: [
+                    'Master SMART requirements writing and validation techniques',
+                    'Understand Agile and Predictive project methodologies',
+                    'Apply various elicitation techniques effectively',
+                    'Create professional visual models (BPMN, UML, ERD)',
+                    'Develop complete Business Requirements Documents (BRD)'
+                ],
+                topics: [
+                    { name: 'SMART Requirements', icon: 'fa-bullseye', description: 'Writing clear, measurable requirements' },
+                    { name: 'Agile & Waterfall', icon: 'fa-diagram-project', description: 'Scrum, Kanban, Waterfall, V-Model frameworks' },
+                    { name: 'Elicitation Techniques', icon: 'fa-comments', description: 'Interviews, workshops, surveys, observation' },
+                    { name: 'Visual Modeling', icon: 'fa-sitemap', description: 'BPMN, UML, ERD, state diagrams' },
+                    { name: 'BRD Development', icon: 'fa-file-contract', description: 'Structure, content, and approval process' }
+                ],
+                prerequisites: 'BA1 recommended but not required. Basic understanding of software development lifecycles helpful.',
+                whatYouLearn: [
+                    'Professional requirements elicitation and documentation',
+                    'Multiple project methodology frameworks',
+                    'Visual modeling and diagramming techniques',
+                    'Complete BRD creation and approval processes'
+                ]
+            },
+            ba3: {
+                title: 'BA3: Project Management - Advanced Course',
+                description: 'Comprehensive project management techniques and tools specifically tailored for business analysts.',
+                duration: '90-120 minutes',
+                slides: 20,
+                level: 'Advanced',
+                objectives: [
+                    'Develop compelling business cases and project charters',
+                    'Master CARD analysis (Constraints, Assumptions, Risks, Dependencies)',
+                    'Create comprehensive project plans and schedules',
+                    'Implement effective change management processes',
+                    'Execute professional project closures with lessons learned'
+                ],
+                topics: [
+                    { name: 'Business Case', icon: 'fa-file-invoice-dollar', description: 'Justification, analysis, and approval' },
+                    { name: 'Project Charter', icon: 'fa-stamp', description: 'Authorization and governance documents' },
+                    { name: 'CARD Analysis', icon: 'fa-shield-halved', description: 'Managing constraints, assumptions, risks, dependencies' },
+                    { name: 'Project Planning', icon: 'fa-calendar-days', description: 'Schedules, communication, quality plans' },
+                    { name: 'Execution & Control', icon: 'fa-gears', description: 'Monitoring, status meetings, change management' },
+                    { name: 'Project Closure', icon: 'fa-flag-checkered', description: 'Reviews, lessons learned, transitions' }
+                ],
+                prerequisites: 'BA1 and BA2 recommended. Experience with project lifecycles beneficial.',
+                whatYouLearn: [
+                    'End-to-end project management from conception to closure',
+                    'Business case and charter development',
+                    'Risk and change management strategies',
+                    'Professional project planning and execution'
+                ]
+            }
+        };
+
+        function openModal(courseId) {
+            const modal = document.getElementById('courseModal');
+            const course = courseData[courseId];
+            
+            document.getElementById('modalTitle').textContent = course.title;
+            
+            const modalBody = document.getElementById('modalBody');
+            modalBody.innerHTML = `
+                <div class="space-y-6">
+                    <!-- Course Overview -->
+                    <div>
+                        <p class="text-white/90 text-lg leading-relaxed">${course.description}</p>
+                    </div>
+
+                    <!-- Course Info -->
+                    <div class="grid grid-cols-3 gap-4 p-4 bg-white/5 rounded-lg border border-white/10">
+                        <div class="text-center">
+                            <div class="text-primary-400 text-2xl font-bold">${course.slides}</div>
+                            <div class="text-white/60 text-xs mt-1">Slides</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-primary-400 text-2xl font-bold">${course.duration.split('-')[0].trim()}</div>
+                            <div class="text-white/60 text-xs mt-1">Duration</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-primary-400 text-2xl font-bold">${course.level}</div>
+                            <div class="text-white/60 text-xs mt-1">Level</div>
+                        </div>
+                    </div>
+
+                    <!-- Learning Objectives -->
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                            <i class="fas fa-graduation-cap text-primary-400"></i>
+                            Learning Objectives
+                        </h3>
+                        <ul class="space-y-2">
+                            ${course.objectives.map(obj => `
+                                <li class="flex items-start gap-3 text-white/80">
+                                    <i class="fas fa-check text-primary-400 mt-1"></i>
+                                    <span>${obj}</span>
+                                </li>
+                            `).join('')}
+                        </ul>
+                    </div>
+
+                    <!-- Topics Covered -->
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                            <i class="fas fa-book text-primary-400"></i>
+                            Topics Covered
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-4">
+                            ${course.topics.map(topic => `
+                                <div class="bg-white/5 rounded-lg p-4 border border-white/10 hover:bg-white/10 transition-all">
+                                    <div class="flex items-start gap-3">
+                                        <div class="w-10 h-10 bg-primary-600/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                                            <i class="fas ${topic.icon} text-primary-400"></i>
+                                        </div>
+                                        <div>
+                                            <h4 class="text-white font-semibold mb-1">${topic.name}</h4>
+                                            <p class="text-white/60 text-sm">${topic.description}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- What You'll Learn -->
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-3 flex items-center gap-2">
+                            <i class="fas fa-lightbulb text-primary-400"></i>
+                            What You'll Learn
+                        </h3>
+                        <div class="grid md:grid-cols-2 gap-3">
+                            ${course.whatYouLearn.map(item => `
+                                <div class="flex items-start gap-2 text-white/80">
+                                    <i class="fas fa-circle-dot text-primary-400 text-xs mt-1.5"></i>
+                                    <span>${item}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                    </div>
+
+                    <!-- Prerequisites -->
+                    <div class="bg-primary-900/20 border border-primary-500/30 rounded-lg p-4">
+                        <h3 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                            <i class="fas fa-info-circle text-primary-400"></i>
+                            Prerequisites
+                        </h3>
+                        <p class="text-white/80">${course.prerequisites}</p>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex gap-4 pt-4">
+                        <a href="${courseId.toUpperCase()}/BA${courseId.slice(2)}.html" 
+                           class="flex-1 bg-primary-600 hover:bg-primary-700 text-white text-center py-3 px-6 rounded-lg font-medium transition-colors">
+                            <i class="fas fa-play mr-2"></i>
+                            Start Course Now
+                        </a>
+                        <button onclick="closeModal()" 
+                                class="px-6 bg-white/10 hover:bg-white/20 text-white rounded-lg font-medium transition-colors border border-white/20">
+                            Close
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('courseModal');
+            modal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal when clicking outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('courseModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        }
+
+        // Close modal with Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
 </body>
 </html>

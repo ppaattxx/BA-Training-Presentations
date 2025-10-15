@@ -4,12 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Business Analysis Fundamentals - Professional Training Deck">
-    <me        <div class="space-y-1 text-gray-600 text-xs">
-            <div><kbd>→</kbd> <kbd>Space</kbd> Next slide</div>
-            <div><kbd>←</kbd> <kbd>Backspace</kbd> Previous slide</div>
-            <div><kbd>Home</kbd> First slide | <kbd>End</kbd> Last slide</div>
-            <div><kbd>?</kbd> Toggle this help</div>
-        </div>thor" content="Pat Nacario">
+    <meta name="author" content="Pat Nacario">
     <title>BA Fundamentals | Professional Training</title>
     
     <!-- Tailwind CSS CDN -->
@@ -65,9 +60,21 @@
             font-family: 'Inter', system-ui, sans-serif;
         }
         
+        /* Clean Light Background */
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
             background-attachment: fixed;
+        }
+
+        /* Simple Card Styling */
+        .glass-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
         @keyframes slideIn {
@@ -90,36 +97,111 @@
             animation: slideIn 0.3s ease-out;
         }
         
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .card-hover:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
         #slideContainer::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
         
         #slideContainer::-webkit-scrollbar-track {
             background: #f1f5f9;
+            border-radius: 4px;
         }
         
         #slideContainer::-webkit-scrollbar-thumb {
             background: #cbd5e1;
-            border-radius: 3px;
+            border-radius: 4px;
         }
         
         #slideContainer::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
+        }
+
+        /* Fullscreen Mode - Simple */
+        .fullscreen-mode {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            margin: 0 !important;
+            padding: 3rem !important;
+            border-radius: 0 !important;
+            z-index: 9998 !important;
+            overflow-y: auto !important;
+            background: white !important;
+        }
+
+        .fullscreen-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9997;
+            display: none;
+        }
+
+        .fullscreen-backdrop.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .fullscreen-controls {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            display: none;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .fullscreen-controls.active {
+            display: flex;
+            align-items: center;
+        }
+
+        .fullscreen-controls button {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .fullscreen-controls button:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+            color: #0f172a;
+        }
+
+        .fullscreen-controls .slide-counter {
+            color: #475569;
+            font-size: 0.813rem;
+            padding: 0 0.75rem;
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
         }
         
         @media print {
@@ -135,6 +217,316 @@
                 box-shadow: none;
             }
         }
+
+        /* Course Info Modal Styles */
+        /* Course Info Modal Styles - Simple */
+        .course-modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .course-modal.active {
+            display: flex;
+            opacity: 1;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .course-modal-content {
+            background: white;
+            padding: 0;
+            border-radius: 12px;
+            max-width: 900px;
+            width: 90%;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+        }
+
+        .course-modal.active .course-modal-content {
+            transform: scale(1);
+        }
+
+        .course-modal-header {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+            background: #f8fafc;
+            border-radius: 12px 12px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .course-modal-body {
+            padding: 24px;
+        }
+
+        .close-course-modal {
+            color: #475569;
+            font-size: 32px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            line-height: 1;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: white;
+            border: 1px solid #e2e8f0;
+        }
+
+        .close-course-modal:hover {
+            color: #0f172a;
+            background: #f1f5f9;
+            border-color: #cbd5e1;
+        }
+
+        .course-modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .course-modal-content::-webkit-scrollbar-track {
+            background: #f1f5f9;
+            border-radius: 4px;
+        }
+
+        .course-modal-content::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+
+        .course-modal-content::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+
+        /* Clickable Learning Terms in Slide Content */
+        .learn-term {
+            cursor: pointer;
+            text-decoration: underline dotted;
+            color: inherit;
+            text-decoration-color: #3b82f6;
+            text-underline-offset: 2px;
+            transition: all 0.2s ease;
+            font-weight: 600;
+            position: relative;
+        }
+        
+        .learn-term:hover {
+            text-decoration: underline solid;
+            text-decoration-color: #1d4ed8;
+            color: #3b82f6;
+            transform: scale(1.02);
+            display: inline-block;
+        }
+
+        .learn-term::after {
+            content: '💡';
+            position: absolute;
+            right: -20px;
+            top: -5px;
+            font-size: 0.7em;
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        .learn-term:hover::after {
+            opacity: 1;
+        }
+
+        /* Enhanced Modal Animations */
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes modalSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px) scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        @keyframes backdropBlur {
+            from {
+                backdrop-filter: blur(0px);
+                background-color: rgba(0, 0, 0, 0);
+            }
+            to {
+                backdrop-filter: blur(8px);
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+        }
+
+        #learningModal.active {
+            animation: backdropBlur 0.3s ease forwards;
+        }
+
+        #learningModal.active .learning-modal-content {
+            animation: modalSlideUp 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Stagger animation for modal content */
+        @keyframes staggerFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .learning-modal-content > * {
+            animation: staggerFadeIn 0.4s ease forwards;
+        }
+
+        .learning-modal-content > *:nth-child(1) { animation-delay: 0.1s; opacity: 0; }
+        .learning-modal-content > *:nth-child(2) { animation-delay: 0.15s; opacity: 0; }
+        .learning-modal-content > *:nth-child(3) { animation-delay: 0.2s; opacity: 0; }
+        .learning-modal-content > *:nth-child(4) { animation-delay: 0.25s; opacity: 0; }
+
+        /* Pulse animation for helper buttons */
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+
+        .helper-btn:hover {
+            animation: pulse 1s ease-in-out infinite;
+        }
+
+        /* Loading skeleton for content */
+        @keyframes shimmer {
+            0% {
+                background-position: -1000px 0;
+            }
+            100% {
+                background-position: 1000px 0;
+            }
+        }
+
+        .skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 1000px 100%;
+            animation: shimmer 2s infinite;
+        }
+
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus Styles for Accessibility */
+        *:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        button:focus-visible,
+        .helper-btn:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        /* Keyboard Shortcut Styles */
+        kbd {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9em;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            color: #475569;
+        }
+
+        /* Print-Friendly Styles */
+        @media print {
+            /* Hide all interactive elements */
+            .no-print,
+            header,
+            nav,
+            .glass-card,
+            .helper-btn,
+            button,
+            #progressBar {
+                display: none !important;
+            }
+
+            /* Reset body and container styles for printing */
+            body {
+                background: white !important;
+                margin: 0;
+                padding: 20px;
+            }
+
+            #slideContainer {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: white !important;
+                min-height: auto !important;
+                page-break-inside: avoid;
+            }
+
+            /* Remove clickable term styling */
+            .learn-term {
+                text-decoration: none !important;
+                color: inherit !important;
+                font-weight: normal !important;
+            }
+
+            .learn-term::after {
+                display: none !important;
+            }
+
+            /* Ensure text is readable */
+            * {
+                color: black !important;
+                background: white !important;
+            }
+
+            /* Show slide number for reference */
+            #slideContainer::after {
+                content: "Slide " attr(data-slide) " of " attr(data-total);
+                display: block;
+                text-align: right;
+                margin-top: 20px;
+                font-size: 10pt;
+                color: #666 !important;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -147,13 +539,19 @@
                         <i class="fas fa-chart-line text-white text-lg"></i>
                     </div>
                     <div>
-                        <span class="text-white font-semibold text-base hidden sm:inline">Business Analysis Fundamentals</span>
-                        <span class="text-white font-semibold text-base sm:hidden">BA Fundamentals</span>
-                        <p class="text-white/70 text-xs hidden sm:block">Professional Training</p>
+                        <span class="text-gray-800 font-semibold text-base hidden sm:inline">Business Analysis Fundamentals</span>
+                        <span class="text-gray-800 font-semibold text-base sm:hidden">BA Fundamentals</span>
+                        <p class="text-gray-600 text-xs hidden sm:block">Professional Training</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
-                    <a href="../index.html" class="text-white hover:text-white/80 transition-colors hidden sm:block" title="Back to Home">
+                    <button onclick="toggleFullscreen()" 
+                            class="text-gray-700 hover:text-gray-900 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100"
+                            title="Fullscreen (F)"
+                            aria-label="Toggle fullscreen mode">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <a href="../index.html" class="text-gray-700 hover:text-gray-900 transition-colors hidden sm:block" title="Back to Home">
                         <i class="fas fa-home text-lg"></i>
                     </a>
                 </div>
@@ -168,10 +566,10 @@
             <div class="mb-6 no-print">
                 <div class="flex items-center justify-between mb-2">
                     <div class="flex items-center gap-2">
-                        <i class="fas fa-tasks text-white text-sm"></i>
-                        <span class="text-white text-sm font-medium">Progress</span>
+                        <i class="fas fa-tasks text-gray-700 text-sm"></i>
+                        <span class="text-gray-700 text-sm font-medium">Progress</span>
                     </div>
-                    <span id="progressPercent" class="text-white text-sm font-semibold">0%</span>
+                    <span id="progressPercent" class="text-gray-700 text-sm font-semibold">0%</span>
                 </div>
                 <div class="glass-card rounded-full h-2.5 overflow-hidden">
                     <div id="progressBar" class="bg-primary-500 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
@@ -193,40 +591,61 @@
             </article>
 
             <!-- Navigation Controls -->
-            <nav class="flex justify-between items-center mt-6 no-print" aria-label="Slide navigation">
+            <nav class="flex justify-center items-center gap-3 mt-6 no-print" aria-label="Slide navigation">
                 <!-- Previous Button -->
                 <button id="prevBtn" 
-                        class="glass-card px-6 py-3 rounded-lg text-white font-medium hover:bg-white/10 transition-all duration-300 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                        aria-label="Previous slide">
+                        class="glass-card px-4 py-2 rounded-lg text-white hover:bg-white/10 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+                        aria-label="Previous slide"
+                        title="Previous (←)">
                     <i class="fas fa-chevron-left"></i>
-                    <span class="hidden sm:inline">Previous</span>
                 </button>
 
                 <!-- Slide Counter -->
-                <div class="glass-card px-4 py-3 rounded-lg flex items-center gap-3">
-                    <i class="fas fa-file-powerpoint text-white text-sm"></i>
+                <div class="glass-card px-3 py-2 rounded-lg flex items-center gap-2">
                     <span id="slideNumber" class="text-white font-semibold text-sm">1</span>
-                    <span class="text-white/50 text-sm">/</span>
-                    <span id="totalSlides" class="text-white/70 text-sm">-</span>
+                    <span class="text-white/40 text-xs">/</span>
+                    <span id="totalSlides" class="text-white/60 text-sm">-</span>
                 </div>
 
                 <!-- Next Button -->
                 <button id="nextBtn" 
-                        class="glass-card px-6 py-3 rounded-lg text-white font-medium hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
-                        aria-label="Next slide">
-                    <span class="hidden sm:inline">Next</span>
+                        class="glass-card px-4 py-2 rounded-lg text-white hover:bg-white/10 transition-all duration-300"
+                        aria-label="Next slide"
+                        title="Next (→)">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </nav>
         </div>
     </main>
 
+    <!-- Fullscreen Backdrop -->
+    <div id="fullscreenBackdrop" class="fullscreen-backdrop"></div>
+
+    <!-- Fullscreen Controls -->
+    <div id="fullscreenControls" class="fullscreen-controls">
+        <button onclick="prevSlide()" aria-label="Previous slide" title="Previous (←)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <span class="slide-counter">
+            <span id="fsSlideNumber">1</span> / <span id="fsTotalSlides">-</span>
+        </span>
+        <button onclick="nextSlide()" aria-label="Next slide" title="Next (→)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <button onclick="toggleFullscreen()" aria-label="Exit fullscreen" title="Exit (ESC)">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Shared Utilities (load first for error handling and debugging) -->
+    <script src="../shared-utils.js"></script>
+    
     <!-- Data Script (loads slide content) -->
     <script src="data2.js"></script>
     
     <!-- Application Script (presentation logic) -->
     <script src="ba2-app.js"></script>
-    
+
     <!-- Controller Script -->
     <script>
         // Initialize presentation when DOM is ready

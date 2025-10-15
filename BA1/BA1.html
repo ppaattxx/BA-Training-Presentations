@@ -59,9 +59,23 @@
             font-family: 'Inter', system-ui, sans-serif;
         }
         
+        /* Clean Light Background */
         body {
-            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
             background-attachment: fixed;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Simple Card Styling */
+        .glass-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        .glass-card:hover {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
         
         @keyframes slideIn {
@@ -84,36 +98,111 @@
             animation: slideIn 0.3s ease-out;
         }
         
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
         .card-hover {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
         .card-hover:hover {
             transform: translateY(-4px);
-            box-shadow: 0 20px 40px -12px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
         }
         
         #slideContainer::-webkit-scrollbar {
-            width: 6px;
+            width: 8px;
         }
         
         #slideContainer::-webkit-scrollbar-track {
             background: #f1f5f9;
+            border-radius: 4px;
         }
         
         #slideContainer::-webkit-scrollbar-thumb {
             background: #cbd5e1;
-            border-radius: 3px;
+            border-radius: 4px;
         }
         
         #slideContainer::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
+        }
+
+        /* Fullscreen Mode - Simple */
+        .fullscreen-mode {
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            right: 0 !important;
+            bottom: 0 !important;
+            width: 100vw !important;
+            height: 100vh !important;
+            max-width: 100vw !important;
+            max-height: 100vh !important;
+            margin: 0 !important;
+            padding: 3rem !important;
+            border-radius: 0 !important;
+            z-index: 9998 !important;
+            overflow-y: auto !important;
+            background: white !important;
+        }
+
+        .fullscreen-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            z-index: 9997;
+            display: none;
+        }
+
+        .fullscreen-backdrop.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .fullscreen-controls {
+            position: fixed;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+            display: none;
+            gap: 0.5rem;
+            background: white;
+            padding: 0.5rem 1rem;
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+        .fullscreen-controls.active {
+            display: flex;
+            align-items: center;
+        }
+
+        .fullscreen-controls button {
+            background: white;
+            border: 1px solid #e2e8f0;
+            color: #475569;
+            padding: 0.4rem 0.75rem;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.875rem;
+        }
+
+        .fullscreen-controls button:hover {
+            background: #f8fafc;
+            border-color: #cbd5e1;
+            color: #0f172a;
+        }
+
+        .fullscreen-controls .slide-counter {
+            color: #475569;
+            font-size: 0.813rem;
+            padding: 0 0.75rem;
+            border-left: 1px solid #e2e8f0;
+            border-right: 1px solid #e2e8f0;
         }
         
         @media print {
@@ -129,6 +218,105 @@
                 box-shadow: none;
             }
         }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Focus Styles for Accessibility */
+        *:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        button:focus-visible,
+        .helper-btn:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+
+        /* Keyboard Shortcut Styles */
+        kbd {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            color: #475569;
+            display: inline-block;
+            font-family: monospace;
+            font-size: 0.9em;
+            padding: 2px 6px;
+            margin: 0 2px;
+        }
+
+        /* Progress Bar Styles */
+        #progressBar {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+        }
+
+        /* Print-Friendly Styles */
+        @media print {
+            /* Hide all interactive elements */
+            .no-print,
+            header,
+            nav,
+            .glass-card,
+            .helper-btn,
+            button,
+            #progressBar {
+                display: none !important;
+            }
+
+            /* Reset body and container styles for printing */
+            body {
+                background: white !important;
+                margin: 0;
+                padding: 20px;
+            }
+
+            #slideContainer {
+                width: 100% !important;
+                max-width: 100% !important;
+                margin: 0 !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+                border-radius: 0 !important;
+                background: white !important;
+                min-height: auto !important;
+                page-break-inside: avoid;
+            }
+
+            /* Remove clickable term styling */
+            .learn-term {
+                text-decoration: none !important;
+                color: inherit !important;
+                font-weight: normal !important;
+            }
+
+            .learn-term::after {
+                display: none !important;
+            }
+
+            /* Ensure text is readable */
+            * {
+                color: black !important;
+                background: white !important;
+            }
+
+            /* Show slide number for reference */
+            #slideContainer::after {
+                content: "Slide " attr(data-slide) " of " attr(data-total);
+                display: block;
+                text-align: right;
+                margin-top: 20px;
+                font-size: 10pt;
+                color: #666 !important;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -141,13 +329,19 @@
                         <i class="fas fa-rocket text-white text-lg"></i>
                     </div>
                     <div>
-                        <span class="text-white font-semibold text-base hidden sm:inline">BA1: Project Initiation</span>
-                        <span class="text-white font-semibold text-base sm:hidden">Project Initiation</span>
-                        <p class="text-white/70 text-xs hidden sm:block">Foundation Course</p>
+                        <span class="text-gray-800 font-semibold text-base hidden sm:inline">BA1: Project Initiation</span>
+                        <span class="text-gray-800 font-semibold text-base sm:hidden">Project Initiation</span>
+                        <p class="text-gray-600 text-xs hidden sm:block">Foundation Course</p>
                     </div>
                 </div>
                 <div class="flex items-center gap-3">
-                    <a href="../index.html" class="text-white hover:text-white/80 transition-colors hidden sm:block" title="Back to Home">
+                    <button onclick="toggleFullscreen()" 
+                            class="text-gray-700 hover:text-gray-900 transition-colors px-3 py-2 rounded-lg hover:bg-gray-100"
+                            title="Fullscreen (F)"
+                            aria-label="Toggle fullscreen mode">
+                        <i class="fas fa-expand"></i>
+                    </button>
+                    <a href="../index.html" class="text-gray-700 hover:text-gray-900 transition-colors hidden sm:block" title="Back to Home">
                         <i class="fas fa-home text-lg"></i>
                     </a>
                 </div>
@@ -162,10 +356,10 @@
             <div class="mb-6 no-print">
                 <div class="flex items-center justify-between mb-2">
                     <div class="flex items-center gap-2">
-                        <i class="fas fa-tasks text-white text-sm"></i>
-                        <span class="text-white text-sm font-medium">Progress</span>
+                        <i class="fas fa-tasks text-gray-700 text-sm"></i>
+                        <span class="text-gray-700 text-sm font-medium">Progress</span>
                     </div>
-                    <span id="progressPercent" class="text-white text-sm font-semibold">0%</span>
+                    <span id="progressPercent" class="text-gray-700 text-sm font-semibold">0%</span>
                 </div>
                 <div class="glass-card rounded-full h-2.5 overflow-hidden">
                     <div id="progressBar" class="bg-primary-500 h-2.5 rounded-full transition-all duration-500" style="width: 0%"></div>
@@ -187,34 +381,55 @@
             </article>
 
             <!-- Navigation Controls -->
-            <nav class="flex justify-between items-center mt-6 no-print" aria-label="Slide navigation">
+            <nav class="flex justify-center items-center gap-3 mt-6 no-print" aria-label="Slide navigation">
                 <!-- Previous Button -->
                 <button id="prevBtn" 
-                        class="glass-card px-6 py-3 rounded-lg text-white font-medium hover:bg-white/10 transition-all duration-300 flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
-                        aria-label="Previous slide">
+                        class="glass-card px-4 py-2 rounded-lg text-white hover:bg-white/10 transition-all duration-300 disabled:opacity-30 disabled:cursor-not-allowed"
+                        aria-label="Previous slide"
+                        title="Previous (←)">
                     <i class="fas fa-chevron-left"></i>
-                    <span class="hidden sm:inline">Previous</span>
                 </button>
 
                 <!-- Slide Counter -->
-                <div class="glass-card px-4 py-3 rounded-lg flex items-center gap-3">
-                    <i class="fas fa-file-powerpoint text-white text-sm"></i>
+                <div class="glass-card px-3 py-2 rounded-lg flex items-center gap-2">
                     <span id="slideNumber" class="text-white font-semibold text-sm">1</span>
-                    <span class="text-white/50 text-sm">/</span>
-                    <span id="totalSlides" class="text-white/70 text-sm">-</span>
+                    <span class="text-white/40 text-xs">/</span>
+                    <span id="totalSlides" class="text-white/60 text-sm">-</span>
                 </div>
 
                 <!-- Next Button -->
                 <button id="nextBtn" 
-                        class="glass-card px-6 py-3 rounded-lg text-white font-medium hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
-                        aria-label="Next slide">
-                    <span class="hidden sm:inline">Next</span>
+                        class="glass-card px-4 py-2 rounded-lg text-white hover:bg-white/10 transition-all duration-300"
+                        aria-label="Next slide"
+                        title="Next (→)">
                     <i class="fas fa-chevron-right"></i>
                 </button>
             </nav>
         </div>
     </main>
 
+    <!-- Fullscreen Backdrop -->
+    <div id="fullscreenBackdrop" class="fullscreen-backdrop"></div>
+
+    <!-- Fullscreen Controls -->
+    <div id="fullscreenControls" class="fullscreen-controls">
+        <button onclick="prevSlide()" aria-label="Previous slide" title="Previous (←)">
+            <i class="fas fa-chevron-left"></i>
+        </button>
+        <span class="slide-counter">
+            <span id="fsSlideNumber">1</span> / <span id="fsTotalSlides">-</span>
+        </span>
+        <button onclick="nextSlide()" aria-label="Next slide" title="Next (→)">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <button onclick="toggleFullscreen()" aria-label="Exit fullscreen" title="Exit (ESC)">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Shared Utilities (load first for error handling and debugging) -->
+    <script src="../shared-utils.js"></script>
+    
     <!-- Data Script (loads slide content) -->
     <script src="data.js"></script>
     
@@ -238,4 +453,3 @@
         });
     </script>
 </body>
-</html>

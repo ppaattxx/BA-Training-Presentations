@@ -1,12 +1,14 @@
-// ba-slides-content.js
-// Business Analysis Fundamentals - Streamlined Deck (30 Slides)
+// BA2: Requirements Analysis & Documentation
+// Business Analysis Training Presentations
+// Total Slides: 30 slides covering comprehensive BA fundamentals
 
 const slides = [
-  // 1. Cover Slide
+  // Slide 1: Cover
   {
     title: "Business Analysis Fundamentals",
     subtitle: "Complete Professional Reference Deck",
     type: "cover",
+    notes: "PRESENTER: Welcome to BA2 - Business Analysis Fundamentals module. This comprehensive course covers BA roles, methodologies, requirements management, and modeling techniques. Essential for mastering core BA competencies. Time estimate: 2 minutes.",
     content: `
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
         <div class="card-hover bg-gradient-to-br from-indigo-500 to-purple-600 text-white p-8 rounded-2xl">
@@ -26,16 +28,15 @@ const slides = [
           <p class="text-rose-100">Visual Documentation</p>
         </div>
       </div>
-      <div class="mt-6 text-center text-sm text-gray-600">Prepared by: Pat Nacario</div>
-    `
+        `
   },
 
-  // 2. BA Roles & Skills
+  // Slide 2: BA Roles & Skills
   {
     title: "Business Analyst: Roles & Skills",
     subtitle: "Core Competencies and Responsibilities",
     type: "content",
-    notes: "BA role varies by organization but core activities remain consistent. Focus on what BAs do (elicit, analyze, document requirements) rather than job titles. Emphasize that BAs bridge the gap between business needs and technical solutions. Time: 4 min.",
+    notes: "PRESENTER: BA role varies by organization but core activities remain consistent. Focus on what BAs do (elicit, analyze, document requirements) rather than job titles. Emphasize that BAs bridge the gap between business needs and technical solutions. Time estimate: 4 minutes.",
     content: `
       <div class="bg-indigo-50 border-2 border-indigo-200 p-4 rounded-xl mb-4">
         <h3 class="text-lg font-bold text-indigo-700 mb-2">What is a Business Analyst?</h3>
@@ -89,12 +90,12 @@ const slides = [
     `
   },
 
-  // 3. Adaptive vs Predictive
+  // Slide 3: Adaptive vs Predictive Methodologies
   {
     title: "Adaptive vs Predictive Methodologies",
     subtitle: "Two Fundamental Approaches to Project Management",
     type: "content",
-    notes: "Adaptive (Agile) welcomes changing requirements even late in development. Predictive (Waterfall) requires extensive upfront planning with controlled changes. Choice depends on requirement stability, team experience, and project complexity. Time: 4 min.",
+    notes: "PRESENTER: Adaptive (Agile) welcomes changing requirements even late in development. Predictive (Waterfall) requires extensive upfront planning with controlled changes. Choice depends on requirement stability, team experience, and project complexity. Time estimate: 4 minutes.",
     content: `
       <div class="bg-purple-50 border-2 border-purple-200 p-4 rounded-xl mb-4">
         <p class="text-sm text-gray-700"><strong>Key Difference:</strong> Adaptive methodologies expect and embrace change throughout the project lifecycle, while Predictive methodologies aim to define all requirements upfront and minimize changes through formal control processes.</p>
@@ -154,7 +155,9 @@ const slides = [
         <div class="grid md:grid-cols-5 gap-3 text-xs">
           <!-- Agile Cycle -->
           <div class="bg-gradient-to-br from-orange-50 to-yellow-50 border-2 border-orange-300 p-3 rounded-lg">
-            <h5 class="font-bold text-orange-700 text-center mb-2">Agile</h5>
+            <h5 class="font-bold text-orange-700 text-center mb-2">
+              <span class="learn-term" onclick="openLearningModal('agile')" style="cursor:pointer;">Agile</span>
+            </h5>
             <svg viewBox="0 0 340 180" class="w-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
                 <!-- Orange to Yellow gradient for ring -->
@@ -206,7 +209,9 @@ const slides = [
 
           <!-- Waterfall Flow -->
           <div class="bg-blue-50 border-2 border-blue-300 p-3 rounded-lg">
-            <h5 class="font-bold text-blue-700 text-center mb-2">Waterfall</h5>
+            <h5 class="font-bold text-blue-700 text-center mb-2">
+              <span class="learn-term" onclick="openLearningModal('waterfall')" style="cursor:pointer;">Waterfall</span>
+            </h5>
             <svg viewBox="0 0 200 250" class="w-full" xmlns="http://www.w3.org/2000/svg">
               <rect x="40" y="10" width="120" height="30" fill="#3b82f6" rx="5"/>
               <text x="100" y="29" fill="white" font-size="11" text-anchor="middle">Requirements</text>
@@ -238,7 +243,9 @@ const slides = [
 
           <!-- V-Model Flow (Enhanced) -->
           <div class="bg-purple-50 border-2 border-purple-300 p-3 rounded-lg">
-            <h5 class="font-bold text-purple-700 text-center mb-2">V-Model</h5>
+            <h5 class="font-bold text-purple-700 text-center mb-2">
+              <span class="learn-term" onclick="openLearningModal('vmodel')" style="cursor:pointer;">V-Model</span>
+            </h5>
             <svg viewBox="0 0 240 250" class="w-full" xmlns="http://www.w3.org/2000/svg">
               <!-- Left side labels -->
               <text x="10" y="15" fill="#6366f1" font-size="8" font-weight="bold">STAGE 1</text>
@@ -291,7 +298,9 @@ const slides = [
 
           <!-- Kanban Board -->
           <div class="bg-cyan-50 border-2 border-cyan-300 p-3 rounded-lg">
-            <h5 class="font-bold text-cyan-700 text-center mb-2">� Kanban</h5>
+            <h5 class="font-bold text-cyan-700 text-center mb-2">
+              <span class="learn-term" onclick="openLearningModal('kanban')" style="cursor:pointer;">📋 Kanban</span>
+            </h5>
             <svg viewBox="0 0 240 250" class="w-full" xmlns="http://www.w3.org/2000/svg">
               <!-- Board columns -->
               <rect x="5" y="25" width="55" height="160" fill="#e0e7ff" stroke="#6366f1" stroke-width="2" rx="4"/>
@@ -355,7 +364,9 @@ const slides = [
 
           <!-- DevOps Infinity Loop -->
           <div class="bg-gradient-to-r from-blue-50 to-orange-50 border-2 border-orange-300 p-3 rounded-lg">
-            <h5 class="font-bold text-orange-700 text-center mb-2">DevOps</h5>
+            <h5 class="font-bold text-orange-700 text-center mb-2">
+              <span class="learn-term" onclick="openLearningModal('devops')" style="cursor:pointer;">DevOps</span>
+            </h5>
             
             <svg viewBox="0 0 420 180" class="w-full" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -427,7 +438,9 @@ const slides = [
 
         <!-- Scrum Framework -->
         <div class="card-hover group cursor-pointer bg-gradient-to-r from-green-50 to-green-100 border-l-4 border-green-500 p-3 rounded">
-          <h4 class="font-bold text-green-700">Scrum (Agile)</h4>
+          <h4 class="font-bold text-green-700">
+            <span class="learn-term" onclick="openLearningModal('scrum')" style="cursor:pointer;">Scrum</span> (Agile)
+          </h4>
           <p class="text-gray-700 mt-1"><strong>Definition:</strong> Iterative framework that delivers work in short cycles called Sprints (2-4 weeks). Team plans, builds, reviews, and adapts each sprint.</p>
           <p class="text-gray-600 mt-1 text-[10px]"><strong>Best for:</strong> Evolving requirements, new product development, need for frequent feedback</p>
           <div class="mt-2 p-2 bg-green-50 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[10px]">
@@ -447,7 +460,9 @@ const slides = [
 
         <!-- SAFe Framework -->
         <div class="card-hover group cursor-pointer bg-gradient-to-r from-pink-50 to-pink-100 border-l-4 border-pink-500 p-3 rounded">
-          <h4 class="font-bold text-pink-700">SAFe (Scaled Agile Framework)</h4>
+          <h4 class="font-bold text-pink-700">
+            <span class="learn-term" onclick="openLearningModal('safe')" style="cursor:pointer;">SAFe</span> (Scaled Agile Framework)
+          </h4>
           <p class="text-gray-700 mt-1"><strong>Definition:</strong> Framework for applying Agile practices at enterprise scale with multiple teams (50-1000+ people). Coordinates work through Program Increments (PI) every 8-12 weeks.</p>
           <p class="text-gray-600 mt-1 text-[10px]"><strong>Best for:</strong> Large organizations, multiple coordinated teams, enterprise-wide initiatives</p>
           <div class="mt-2 p-2 bg-pink-50 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-[10px]">
@@ -860,7 +875,9 @@ const slides = [
     content: `
       <div class="grid md:grid-cols-4 gap-3">
         <div class="card-hover group cursor-pointer bg-gradient-to-br from-indigo-50 to-purple-100 border-2 border-indigo-300 p-4 rounded-xl text-center">
-          <h3 class="font-bold text-indigo-700">1. Elicitation</h3>
+          <h3 class="font-bold text-indigo-700">
+            1. <span class="learn-term" onclick="openLearningModal('elicitation')" style="cursor:pointer;">Elicitation</span>
+          </h3>
           <p class="text-xs text-gray-700 mt-2">Gather needs through interviews, workshops, surveys, observation, document review</p>
           <div class="mt-2 p-2 bg-indigo-50 rounded text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             <strong>Deliverables:</strong> Interview notes, workshop output, survey results<br>
@@ -1248,7 +1265,9 @@ const slides = [
       <!-- Model Type Cards with Detailed Info -->
       <div class="grid md:grid-cols-2 gap-3 text-sm">
         <div class="card-hover group cursor-pointer bg-gradient-to-r from-green-50 to-emerald-100 border-l-4 border-green-500 p-4 rounded-xl">
-          <h4 class="font-bold text-green-700 mb-2">BPMN (Business Process Model & Notation)</h4>
+          <h4 class="font-bold text-green-700 mb-2">
+            <span class="learn-term" onclick="openLearningModal('bpmn')" style="cursor:pointer;">BPMN</span> (Business Process Model & Notation)
+          </h4>
           <p class="text-xs text-gray-700 mb-2"><strong>Purpose:</strong> Model business workflows and processes (as-is and to-be states)</p>
           <p class="text-xs text-gray-700 mb-2"><strong>Key Elements:</strong> Start/End events (circles), Tasks (rectangles), Gateways (diamonds), Swimlanes (responsibilities)</p>
           <p class="text-xs text-green-600"><strong>Audience:</strong> Business stakeholders, process owners, operations teams</p>
@@ -1379,7 +1398,9 @@ const slides = [
     notes: "BRD is THE formal contract between business and IT. BA owns and maintains it. Must be complete and signed before design phase. Use version control (v1.0, v1.1, v2.0). Store in central repository. Time: 4 min.",
     content: `
       <div class="bg-gradient-to-r from-indigo-50 to-blue-50 border-2 border-indigo-200 p-5 rounded-xl mb-4">
-        <h3 class="text-xl font-bold text-indigo-700 mb-2">📋 BRD - Business Requirements Document</h3>
+        <h3 class="text-xl font-bold text-indigo-700 mb-2">
+          📋 <span class="learn-term" onclick="openLearningModal('brd')" style="cursor:pointer;">BRD</span> - Business Requirements Document
+        </h3>
         <p class="text-sm text-gray-700">Formal document containing all project requirements, business rules, use cases, and stakeholder information. Serves as the <strong>contract</strong> between business and IT teams.</p>
       </div>
 

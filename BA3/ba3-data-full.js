@@ -1,5 +1,182 @@
+/**
+ * BA3: Project Management Techniques & Tools
+ * Business Analysis Training Presentations
+ * 
+ * @fileoverview Complete data structure for BA3 presentation covering the entire project management lifecycle
+ * @version 2.0.0
+ * @author BA Training Team
+ * 
+ * Structure:
+ * - SLIDE_CONFIG: Configuration constants for timing and validation
+ * - SlideFactory: Factory functions for creating typed slides
+ * - Debug utilities: Functions for development and troubleshooting
+ * - slides: Main data array consumed by ba3-app.js
+ */
+
+// ============================================================================
+// CONFIGURATION & CONSTANTS
+// ============================================================================
+
+/**
+ * Global configuration for slide management
+ * @const {Object}
+ */
+const SLIDE_CONFIG = {
+    /** Development mode flag - enables additional logging and validation */
+    DEV_MODE: false,
+    
+    /** Valid slide types */
+    VALID_TYPES: ['cover', 'content', 'summary'],
+    
+    /** Timing estimates in minutes */
+    TIMING: {
+        COVER: 2,
+        CONTENT: 5,
+        SUMMARY: 6
+    },
+    
+    /** Required fields for slide validation */
+    REQUIRED_FIELDS: ['title', 'subtitle', 'type', 'notes', 'content']
+};
+
+// ============================================================================
+// SLIDE FACTORY FUNCTIONS
+// ============================================================================
+
+/**
+ * Creates a slide object with validation
+ * @param {Object} config - Slide configuration
+ * @param {string} config.title - Slide title
+ * @param {string} config.subtitle - Slide subtitle
+ * @param {string} config.type - Slide type (cover, content, summary)
+ * @param {string} config.notes - Presenter notes with time estimate
+ * @param {string} config.content - HTML content string
+ * @returns {Object} Validated slide object
+ */
+function createSlide({ title, subtitle, type, notes, content }) {
+    const slide = { title, subtitle, type, notes, content };
+    
+    if (SLIDE_CONFIG.DEV_MODE) {
+        validateSlide(slide);
+    }
+    
+    return slide;
+}
+
+// ============================================================================
+// VALIDATION & DEBUGGING UTILITIES
+// ============================================================================
+
+/**
+ * Validates a slide object for required fields and proper structure
+ * @param {Object} slide - Slide to validate
+ * @throws {Error} If validation fails
+ */
+function validateSlide(slide) {
+    // Check required fields
+    for (const field of SLIDE_CONFIG.REQUIRED_FIELDS) {
+        if (!slide[field]) {
+            throw new Error(`Missing required field '${field}' in slide: ${slide.title || 'Unknown'}`);
+        }
+    }
+    
+    // Validate type
+    if (!SLIDE_CONFIG.VALID_TYPES.includes(slide.type)) {
+        throw new Error(`Invalid slide type '${slide.type}' in slide: ${slide.title}. Must be one of: ${SLIDE_CONFIG.VALID_TYPES.join(', ')}`);
+    }
+    
+    // Check for empty content
+    if (slide.content.trim().length < 50) {
+        console.warn(`⚠️ Slide '${slide.title}' has very short content (${slide.content.length} chars)`);
+    }
+}
+
+/**
+ * Gets statistics about all slides
+ * @param {Array} slidesArray - Array of slides to analyze
+ * @returns {Object} Statistics object
+ */
+function getSlideStats(slidesArray) {
+    return {
+        total: slidesArray.length,
+        byType: {
+            cover: slidesArray.filter(s => s.type === 'cover').length,
+            content: slidesArray.filter(s => s.type === 'content').length,
+            summary: slidesArray.filter(s => s.type === 'summary').length
+        },
+        estimatedTimeMinutes: slidesArray.reduce((sum, slide) => {
+            const match = slide.notes.match(/Time estimate:\s*(\d+)/);
+            return sum + (match ? parseInt(match[1]) : 0);
+        }, 0)
+    };
+}
+
+/**
+ * Finds slides by type
+ * @param {Array} slidesArray - Array of slides
+ * @param {string} type - Type to filter by
+ * @returns {Array} Filtered slides
+ */
+function findSlidesByType(slidesArray, type) {
+    return slidesArray.filter(s => s.type === type);
+}
+
+/**
+ * Validates all slides in an array
+ * @param {Array} slidesArray - Array of slides to validate
+ * @returns {Object} Validation results with errors array
+ */
+function validateAllSlides(slidesArray) {
+    const errors = [];
+    
+    slidesArray.forEach((slide, index) => {
+        try {
+            validateSlide(slide);
+        } catch (error) {
+            errors.push({ index, slide: slide.title, error: error.message });
+        }
+    });
+    
+    return {
+        valid: errors.length === 0,
+        totalSlides: slidesArray.length,
+        errors
+    };
+}
+
+/**
+ * Logs detailed slide information for debugging
+ * @param {Object} slide - Slide to log
+ * @param {number} index - Slide index
+ */
+function logSlideInfo(slide, index) {
+    console.group(`📊 Slide ${index + 1}: ${slide.title}`);
+    console.log('Type:', slide.type);
+    console.log('Subtitle:', slide.subtitle);
+    console.log('Content length:', slide.content.length, 'characters');
+    console.log('Notes preview:', slide.notes.substring(0, 100) + '...');
+    console.groupEnd();
+}
+
+// ============================================================================
+// MAIN SLIDES DATA ARRAY
+// ============================================================================
+
+/**
+ * Main slides array for BA3 presentation
+ * Total: 20 slides covering complete project management lifecycle
+ * @type {Array<Object>}
+ */
 const slides = [
-    // Slide 1: Title
+    // ========================================================================
+    // STAGE 1: CONCEPTION & INITIATION (Slides 1-9)
+    // ========================================================================
+    
+    /**
+     * Slide 1: Cover Slide
+     * Introduces the four-stage project management framework
+     * Estimated time: 2 minutes
+     */
     {
         title: "Project Management Techniques & Tools",
         subtitle: "Complete guide to managing BA projects from conception to closure",
@@ -24,11 +201,14 @@ const slides = [
                     <p class="text-rose-100">Review & transition</p>
                 </div>
             </div>
-            <div class="mt-6 text-center text-sm text-gray-600">Prepared by: Pat Nacario</div>
         `
     },
 
-    // Slide 2: Overview - Stages of a Project
+    /**
+     * Slide 2: Four Sequential Project Stages
+     * Overview of complete project lifecycle
+     * Estimated time: 3 minutes
+     */
     {
         title: "Stages of a Project",
         subtitle: "The four sequential phases of project delivery",
@@ -195,7 +375,9 @@ const slides = [
                 </div>
 
                 <div class="bg-gradient-to-r from-primary-600 to-purple-600 text-white p-6 rounded-xl">
-                    <h4 class="font-bold text-lg mb-2">Business Case Components</h4>
+                    <h4 class="font-bold text-lg mb-2">
+                        <span class="learn-term" onclick="openLearningModal('business-case')" style="cursor:pointer;">Business Case</span> Components
+                    </h4>
                     <p class="text-sm">Problem/Opportunity • Solution Options • Costs & Benefits • Risks • Recommended Action • Next Steps</p>
                 </div>
             </div>
@@ -300,7 +482,7 @@ const slides = [
                         <ul class="text-gray-700 space-y-2 text-sm">
                             <li>• Lead with business value, not technical details</li>
                             <li>• Use 1-page executive summary</li>
-                            <li>• Show clear ROI and payback period</li>
+                            <li>• Show clear <span class="learn-term" onclick="openLearningModal('roi')" style="cursor:pointer;">ROI</span> and payback period</li>
                             <li>• Highlight strategic alignment</li>
                             <li>• Answer "What if we do nothing?"</li>
                             <li>• End with specific ask for decision</li>
@@ -474,7 +656,9 @@ const slides = [
                             <div class="w-8 h-8 bg-gradient-to-br from-amber-500 to-amber-600 rounded-full flex items-center justify-center text-white font-bold text-sm shadow-md flex-shrink-0">
                                 7
                             </div>
-                            <h3 class="font-bold text-amber-700">CARD Analysis</h3>
+                            <h3 class="font-bold text-amber-700">
+                                <span class="learn-term" onclick="openLearningModal('card')" style="cursor:pointer;">CARD</span> Analysis
+                            </h3>
                         </div>
                         <p class="text-gray-700 text-sm">Constraints, Assumptions, Risks, Dependencies identified early</p>
                     </div>
@@ -634,7 +818,11 @@ const slides = [
         `
     },
 
-    // Slide 10: RACI Matrix
+    /**
+     * Slide 10: RACI Matrix - Role Assignment
+     * Defines clear responsibilities: Responsible, Accountable, Consulted, Informed
+     * Estimated time: 6 minutes
+     */
     {
         title: "RACI Matrix",
         subtitle: "Defining clear roles and responsibilities",
@@ -739,7 +927,15 @@ const slides = [
         `
     },
 
-    // Slide 11: Stage 2 - Definition & Planning Overview
+    // ========================================================================
+    // STAGE 2: DEFINITION & PLANNING (Slides 11-15)
+    // ========================================================================
+    
+    /**
+     * Slide 11: Stage 2 Overview - Planning Phase
+     * Introduction to comprehensive project planning
+     * Estimated time: 4 minutes
+     */
     {
         title: "Stage 2: Definition & Planning",
         subtitle: "Developing the roadmap for project success",
@@ -1108,7 +1304,15 @@ const slides = [
         `
     },
 
-    // Slide 16: Stage 3 - Execution & Control
+    // ========================================================================
+    // STAGE 3: EXECUTION & CONTROL (Slides 16-18)
+    // ========================================================================
+    
+    /**
+     * Slide 16: Stage 3 Overview - Execution Phase
+     * Delivering while monitoring progress and managing changes
+     * Estimated time: 4 minutes
+     */
     {
         title: "Stage 3: Execution & Control",
         subtitle: "Delivering while monitoring and managing changes",
@@ -1144,7 +1348,9 @@ const slides = [
                     </div>
 
                     <div class="card-hover group bg-gradient-to-br from-orange-50 to-orange-100 border-2 border-orange-300 p-6 rounded-xl shadow-lg">
-                        <h3 class="text-xl font-bold text-orange-700 mb-3">Change Management</h3>
+                        <h3 class="text-xl font-bold text-orange-700 mb-3">
+                            <span class="learn-term" onclick="openLearningModal('change-mgmt')" style="cursor:pointer;">Change Management</span>
+                        </h3>
                         <p class="text-gray-700 text-sm">Submit request, impact analysis, review by board, approve/reject/defer, update baselines</p>
                         <div class="mt-3 p-2 bg-orange-50 rounded text-xs text-orange-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <strong>Tip:</strong> Controls scope creep and manages expectations
@@ -1317,7 +1523,15 @@ const slides = [
         `
     },
 
-    // Slide 19: Stage 4 - Project Close
+    // ========================================================================
+    // STAGE 4: PROJECT CLOSE (Slides 19-20)
+    // ========================================================================
+    
+    /**
+     * Slide 19: Stage 4 Overview - Closure Phase
+     * Formal project completion and knowledge capture
+     * Estimated time: 5 minutes
+     */
     {
         title: "Stage 4: Project Close",
         subtitle: "Formal closure and knowledge capture",
@@ -1388,7 +1602,9 @@ const slides = [
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="card-hover bg-white border-2 border-blue-200 p-6 rounded-xl shadow-lg">
-                        <h3 class="text-xl font-bold text-blue-600 mb-4">Lessons Learned Process</h3>
+                        <h3 class="text-xl font-bold text-blue-600 mb-4">
+                            <span class="learn-term" onclick="openLearningModal('lessons-learned')" style="cursor:pointer;">Lessons Learned</span> Process
+                        </h3>
                         <div class="space-y-3">
                             <div class="bg-blue-50 p-3 rounded">
                                 <p class="font-semibold text-blue-800 text-sm mb-1">1. Pre-Survey</p>
@@ -1438,3 +1654,87 @@ const slides = [
         `
     }
 ];
+
+// ============================================================================
+// DEVELOPMENT & DEBUGGING SECTION
+// ============================================================================
+
+/**
+ * Initialize development mode logging on load
+ */
+if (SLIDE_CONFIG.DEV_MODE) {
+    console.log('🚀 BA3 Data Module Loaded - Development Mode Active');
+    console.log('📊 Slide Statistics:', getSlideStats(slides));
+    
+    const validation = validateAllSlides(slides);
+    if (validation.valid) {
+        console.log('✅ All slides validated successfully');
+    } else {
+        console.error('❌ Validation errors found:', validation.errors);
+    }
+}
+
+// ============================================================================
+// EXPORTS & PUBLIC API
+// ============================================================================
+
+/**
+ * Public API for accessing and manipulating slide data
+ * @namespace SlideDataAPI
+ */
+if (typeof window !== 'undefined') {
+    window.SlideDataAPI = {
+        /** Main slides array */
+        slides,
+        
+        /** Configuration object */
+        config: SLIDE_CONFIG,
+        
+        /** Get statistics about slides */
+        getStats: () => getSlideStats(slides),
+        
+        /** Find slides by type */
+        findByType: (type) => findSlidesByType(slides, type),
+        
+        /** Validate all slides */
+        validate: () => validateAllSlides(slides),
+        
+        /** Log slide information */
+        logSlide: (index) => logSlideInfo(slides[index], index),
+        
+        /** Enable/disable dev mode */
+        setDevMode: (enabled) => {
+            SLIDE_CONFIG.DEV_MODE = enabled;
+            console.log(`🔧 Development mode ${enabled ? 'enabled' : 'disabled'}`);
+        }
+    };
+    
+    // Add helper for console debugging
+    console.log('💡 Tip: Use window.SlideDataAPI for debugging. Try: SlideDataAPI.getStats()');
+}
+
+// ============================================================================
+// USAGE EXAMPLES (Comment out in production)
+// ============================================================================
+
+/*
+// Example 1: Get presentation statistics
+const stats = SlideDataAPI.getStats();
+console.log(`Total slides: ${stats.total}, Estimated time: ${stats.estimatedTimeMinutes} minutes`);
+
+// Example 2: Find all content slides
+const contentSlides = SlideDataAPI.findByType('content');
+console.log(`Found ${contentSlides.length} content slides`);
+
+// Example 3: Validate all slides
+const validation = SlideDataAPI.validate();
+if (!validation.valid) {
+    console.error('Validation errors:', validation.errors);
+}
+
+// Example 4: Log detailed info for a specific slide
+SlideDataAPI.logSlide(0); // Log first slide
+
+// Example 5: Enable development mode
+SlideDataAPI.setDevMode(true);
+*/

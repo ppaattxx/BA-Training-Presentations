@@ -1,10 +1,14 @@
-﻿// Presentation Data - BA1: Project Initiation
+﻿// BA1: Project Initiation & Planning Framework
+// Business Analysis Training Presentations
+// Total Slides: 13 slides covering project initiation fundamentals
 
 const slides = [
+    // Slide 1: Cover
     {
         title: "Business Analysis Project",
         subtitle: "Project Initiation & Planning Framework",
         type: "cover",
+        notes: "PRESENTER: Welcome to BA1 - Project Initiation module. This course covers the foundational elements of starting a BA project successfully. Focus on understanding the difference between PM and BA roles, and the key components of project initiation. Time estimate: 2 minutes.",
         content: `
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
                 <div class="card-hover bg-gradient-to-br from-primary-500 to-primary-700 text-white p-8 rounded-2xl shadow-xl">
@@ -23,9 +27,10 @@ const slides = [
                     <h3 class="text-2xl font-bold mb-2">Performance Measures</h3>
                     <p class="text-orange-100">Track and measure success</p>
                 </div>
-            </div>
-        `
+            </div>        `
     },
+
+    // Slide 2: Project Manager vs Business Analyst
     {
         title: "Project Manager vs Business Analyst",
         subtitle: "Understanding the key differences in roles and responsibilities",
@@ -85,6 +90,8 @@ const slides = [
             </div>
         `
     },
+
+    // Slide 3: Project Plan Initiation
     {
         title: "Project Plan Initiation",
         subtitle: "Main Goal: Put together the team, inform them, and get the project started",
@@ -107,12 +114,16 @@ const slides = [
                             <td class="p-4 text-gray-600">Interview, Email, Phone Call, Brainstorming</td>
                         </tr>
                         <tr class="border-b hover:bg-primary-50 transition-colors">
-                            <td class="p-4 font-semibold text-primary-700">Create Project Charter</td>
+                            <td class="p-4 font-semibold text-primary-700">
+                                Create <span class="learn-term" onclick="openLearningModal('charter')" style="cursor:pointer;">Project Charter</span>
+                            </td>
                             <td class="p-4">Official document that introduces and explains the project to stakeholders.</td>
                             <td class="p-4 text-gray-600">Serves as formal acknowledgment of the project and its objectives</td>
                         </tr>
                         <tr class="hover:bg-primary-50 transition-colors">
-                            <td class="p-4 font-semibold text-primary-700">Kick-off Meeting</td>
+                            <td class="p-4 font-semibold text-primary-700">
+                                <span class="learn-term" onclick="openLearningModal('kickoff')" style="cursor:pointer;">Kick-off Meeting</span>
+                            </td>
                             <td class="p-4">First meeting with the full project team to discuss project details, objectives, and plan.</td>
                             <td class="p-4 text-gray-600">Ensures everyone is aligned and knows their responsibilities</td>
                         </tr>
@@ -248,9 +259,11 @@ const slides = [
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="card-hover bg-white shadow-lg p-8 rounded-2xl border-t-4 border-primary-500">
                     <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 text-2xl">
-                        📊
+                        �
                     </div>
-                    <h3 class="text-2xl font-bold text-primary-600 mb-4">Stakeholder Power-Interest Analysis</h3>
+                    <h3 class="text-2xl font-bold text-primary-600 mb-4">
+                        <span class="learn-term" onclick="openLearningModal('stakeholder')" style="cursor:pointer;">Stakeholder</span> Power-Interest Analysis
+                    </h3>
                     <p class="text-gray-700 mb-3"><strong>Description:</strong> Uses a stakeholder's level of interest and influence to determine how to involve them in the project.</p>
                     <p class="text-primary-600 font-semibold">Helps manage expectations and engagement</p>
                 </div>
@@ -259,7 +272,9 @@ const slides = [
                     <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4 text-2xl">
                         🎯
                     </div>
-                    <h3 class="text-2xl font-bold text-purple-600 mb-4">Create a RACI Matrix</h3>
+                    <h3 class="text-2xl font-bold text-purple-600 mb-4">
+                        Create a <span class="learn-term" onclick="openLearningModal('raci')" style="cursor:pointer;">RACI</span> Matrix
+                    </h3>
                     <p class="text-gray-700 mb-3"><strong>Description:</strong> Aligns the responsibilities of stakeholders to project tasks.</p>
                     <p class="text-purple-600 font-semibold">Eliminates confusion, alleviates power struggles, and removes lack of ownership</p>
                 </div>
@@ -356,7 +371,9 @@ const slides = [
                         <div class="w-12 h-12 bg-purple-500 rounded-lg flex items-center justify-center mb-3 text-2xl">
                             📋
                         </div>
-                        <h3 class="text-xl font-bold text-purple-700 mb-3">Manage Requirements Effectively</h3>
+                        <h3 class="text-xl font-bold text-purple-700 mb-3">
+                            Manage <span class="learn-term" onclick="openLearningModal('requirements')" style="cursor:pointer;">Requirements</span> Effectively
+                        </h3>
                         <p class="text-gray-700">Ensure requirements are organized, traceable, and accessible to the right people</p>
                     </div>
 
